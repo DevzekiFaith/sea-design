@@ -16,8 +16,8 @@ const Vision: React.FC = () => {
           />
         </div>
         <div className="md:w-1/2 w-full transform transition-transform duration-500 hover:translate-x-2 hover:scale-x-105">
-          <div className="w-[400px] p-8">
-            <p className="text-white text-center md:text-left w-[400px]">
+          <div className="w-[500px] p-10 ">
+            <p className="text-white text-center md:text-left w-[400px] p-6">
               Our vision is to build successful and long-lasting relationships
               based on quality, integrity, commitment, and responsibility. We
               aim to provide the right product, at the right time, and for the

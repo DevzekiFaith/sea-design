@@ -50,7 +50,7 @@ const HeroPage: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative h-screen">
+    <section className="relative h-screen mt-[6rem] ">
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <div
@@ -67,7 +67,7 @@ const HeroPage: React.FC = () => {
               quality={100}
               className="z-0"
             />
-            <div className="absolute inset-0 bg-black opacity-60 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black opacity-60 flex items-center justify-center ">
               <div className="text-center text-white p-8">
                 <h1 className="text-5xl font-bold mb-4">{slide.title}</h1>
                 <p className="text-lg mb-4">{slide.description}</p>

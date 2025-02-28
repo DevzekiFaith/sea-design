@@ -1,5 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import {
+  FaEnvelope,
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaPhone,
+} from "react-icons/fa";
+import Footer from "@/components/Footer/Footer";
 
 export default function Contact() {
   return (
@@ -9,8 +16,8 @@ export default function Contact() {
           <Image
             src="/images/watermap.jpg"
             alt="Contact Us"
-            width={500}
-            height={500}
+            width={600}
+            height={600}
             className="rounded-lg"
           />
         </div>
@@ -22,41 +29,43 @@ export default function Contact() {
             <h3 className="text-2xl font-semibold mb-4 text-white transform transition-transform duration-500 hover:translate-x-1">
               Contact Address
             </h3>
-            <p className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-1">
-              <strong>Email Address:</strong>{" "}
-              <a
-                href="mailto:addluckenergy41@gmail.com"
-                className="underline hover:text-gray-300"
-              >
+            <div className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-1 flex items-center">
+              <FaEnvelope className="mr-2" />
+              <strong>Email:</strong>{" "}
+              <div className="underline hover:text-gray-300 cursor-pointer">
                 addluckenergy41@gmail.com
-              </a>
-            </p>
-            <p className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-1">
+              </div>
+            </div>
+            <div className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-1 flex items-center">
+              <FaWhatsapp className="mr-2" />
               <strong>Whatsapp 24/7:</strong> +2347063506072
-            </p>
-            <p className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-1">
+            </div>
+            <div className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-1 flex items-center">
+              <FaPhone className="mr-2" />
               <strong>Head Office:</strong> +33630645197
-            </p>
+            </div>
           </div>
-          <div className="mb-6">
-            <h3 className="text-2xl font-semibold mb-4 text-white transform transition-transform duration-500 hover:translate-x-1">
+          <div className="mb-6 bg-blue-400 p-4 rounded-lg shadow-lg transform transition-transform duration-500 hover:translate-x-1">
+            <h3 className="text-2xl font-semibold mb-4 text-black transform transition-transform duration-500 hover:translate-x-1">
               U.S.A Liaison Office
             </h3>
-            <p className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-1">
+            <div className="mb-2 text-black transform transition-transform duration-500 hover:translate-x-1 flex items-center">
+              <FaMapMarkerAlt className="mr-2" />
               3901 East Perkinsville Street, Gilbert, Arizona 85295, United
               States of America.
-            </p>
+            </div>
           </div>
           <div className="mb-6">
             <h3 className="text-2xl font-semibold mb-4 text-white transform transition-transform duration-500 hover:translate-x-1">
               Port Harcourt Operation Base
             </h3>
-            <p className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-1">
+            <div className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-1 flex items-center">
+              <FaMapMarkerAlt className="mr-2" />
               Plot 40 Eneka Airport Road, Port Harcourt, Rivers State, Nigeria,
               West Africa.
-            </p>
+            </div>
           </div>
-          <div className="mb-6">
+          <div className="mb-6 bg-blue-600 rounded-lg p-4">
             <h3 className="text-2xl font-semibold mb-4 text-white transform transition-transform duration-500 hover:translate-x-1">
               Office Addresses
             </h3>
@@ -83,6 +92,9 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <section>
+        <Footer />
+      </section>
     </div>
   );
 }

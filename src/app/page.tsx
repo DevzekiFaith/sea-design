@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "@/component/Header/Header";
-import Footer from "@/component/Footer/Footer";
 import Mission from "@/component/Mission/Mission";
 import Vision from "@/component/Vision/Vision";
 import History from "@/component/CompanyHistory/History";
@@ -8,11 +7,11 @@ import Company from "@/component/CompanyOverview/Company";
 import ClientReview from "@/component/ClientReview/Client";
 import HeroPage from "@/component/HeroPage/HeroPage";
 import Team from "@/component/Team/Team";
-// import Partners from "@/component/Partners/Partners";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-black min-h-screen">
       <Header />
       <main className="container mx-auto p-4">
         <section>
@@ -36,8 +35,10 @@ export default function Home() {
         <section>
           <Team />
         </section>
+        <section>
+          <Footer />
+        </section>
       </main>
-      <Footer />
     </div>
   );
 }
