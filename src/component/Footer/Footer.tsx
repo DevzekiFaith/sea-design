@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white p-8 mt-10">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-4 md:mb-0 md:w-1/3 transform transition-transform duration-500 hover:scale-105">
+        <div className="mb-4 mr-6 md:mb-0 md:w-1/3 transform transition-transform duration-500 hover:scale-105">
           <Image
             src="/images/s1.jpg"
             alt="Sea Map"
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             className="w-[500px] h-[350px]"
           />
         </div>
-        <div className="md:w-1/3 text-center">
+        <div className="md:w-1/3 text-center mr-6">
           <h2 className="text-2xl font-bold mb-4 transform transition-transform duration-500 hover:translate-y-1">
             Lucktang Int'l Limited
           </h2>
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             Address: 123 Marine Drive, Ocean City, Country
           </p>
         </div>
-        <div className="md:w-1/3 text-center md:text-right">
+        <div className="md:w-1/3 text-center md:text-right mr-[2rem]">
           <h2 className="text-2xl font-bold mb-4">Follow Us</h2>
           <div className="flex justify-center md:justify-end space-x-4">
             <Link href="#" passHref>
