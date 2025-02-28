@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 
@@ -12,10 +12,10 @@ const reviews = [
   },
   {
     id: 2,
-    name: "Jane Smith",
+    name: "James Smith",
     comment:
       "I am extremely satisfied with the quality of work delivered by Lucktang.",
-    image: "/images/p2.jpg",
+    image: "/images/p10.jpg",
   },
   {
     id: 3,
@@ -52,9 +52,9 @@ const ClientReview: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto p-8 flex flex-col items-center justify-center min-h-screen">
       <h2 className="text-3xl font-bold text-center mb-8">Client Reviews</h2>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden w-[550px] max-w-4xl rounded-2xl">
         <div
           className="flex transition-transform duration-500"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -62,19 +62,25 @@ const ClientReview: React.FC = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="min-w-full bg-black shadow-md p-6 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+              className="min-w-full bg-black shadow-md p-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg h-96 flex flex-col justify-center"
             >
-              <div className="flex items-center mb-4">
-                <img
-                  src={review.image}
-                  alt={review.name}
-                  className="w-16 h-16 rounded-full mr-4"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold">{review.name}</h3>
+              <div className="flex justify-center items-center mb-4">
+                <div className="flex items-center flex-col">
+                  <div>
+                    <img
+                      src={review.image}
+                      alt={review.name}
+                      className="w-45 h-45 rounded-full mr-4"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold pt-10 pb-5">
+                      {review.name}
+                    </h3>
+                  </div>
                 </div>
               </div>
-              <p className="text-gray-700">{review.comment}</p>
+              <p className="text-gray-700 text-center">{review.comment}</p>
             </div>
           ))}
         </div>
