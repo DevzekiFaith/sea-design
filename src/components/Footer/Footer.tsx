@@ -1,7 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
@@ -18,23 +26,27 @@ const Footer: React.FC = () => {
         </div>
         <div className="md:w-1/3 text-center mr-6">
           <h2 className="text-2xl font-bold mb-4 transform transition-transform duration-500 hover:translate-y-1">
-            Lucktang Int'l Limited
+            Lucktang Int&apos;l Limited
           </h2>
           <p className="mb-2 transform transition-transform duration-500 hover:translate-x-1">
-            Revolutionizing the Marine space with cutting-edge solutions for modern Water Works.
+            Revolutionizing the Marine space with cutting-edge solutions for
+            modern Water Works.
           </p>
           <p className="mb-2 transform transition-transform duration-500 hover:translate-x-1 flex items-center justify-center">
-            <FaEnvelope className="mr-2" /> 
-            <a href="mailto:info@lucktang.com" className="underline hover:text-gray-300">
+            <FaEnvelope className="mr-2" />
+            <a
+              href="mailto:info@lucktang.com"
+              className="underline hover:text-gray-300"
+            >
               info@lucktang.com
             </a>
           </p>
           <p className="mb-2 transform transition-transform duration-500 hover:translate-x-1 flex items-center justify-center">
-            <FaPhone className="mr-2" /> 
+            <FaPhone className="mr-2" />
             +123 456 7890
           </p>
           <p className="mb-2 transform transition-transform duration-500 hover:translate-x-1 flex items-center justify-center">
-            <FaMapMarkerAlt className="mr-2" /> 
+            <FaMapMarkerAlt className="mr-2" />
             123 Marine Drive, Ocean City, Country
           </p>
         </div>

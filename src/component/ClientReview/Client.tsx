@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 const reviews = [
   {
@@ -67,10 +68,12 @@ const ClientReview: React.FC = () => {
               <div className="flex justify-center items-center mb-4">
                 <div className="flex items-center flex-col">
                   <div>
-                    <img
+                    <Image
                       src={review.image}
                       alt={review.name}
-                      className="w-45 h-45 rounded-full mr-4"
+                      width={180}
+                      height={180}
+                      className="rounded-full"
                     />
                   </div>
                   <div>

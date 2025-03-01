@@ -8,11 +8,11 @@ const Mission: React.FC = () => {
       </h2>
       <div className="bg-black p-8 rounded-2xl shadow-lg max-w-3xl">
         <p className="text-lg text-gray-700 text-center">
-          <span className="text-white">LIMSCO’s mission</span> is to
+          <span className="text-white">LIMSCO&apos;s mission</span> is to
           continuously evolve and exceed client expectations by understanding
           and fulfilling their specific needs and requirements. We are dedicated
           to delivering not just products and services, but also a deep
-          understanding of our clients’ operations, ensuring that they receive
+          understanding of our clients&apos; operations, ensuring that they receive
           tailored solutions that truly make a difference.
         </p>
       </div>

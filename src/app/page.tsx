@@ -23,7 +23,7 @@ export default function Home() {
         <section className="mt-10">
           <History />
         </section>
-        <section className="mt-10">
+        <section className="mt-10"></section>
           <Company />
         </section>
         <section className="mt-10">
