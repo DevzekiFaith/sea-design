@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { FaStar } from "react-icons/fa";
 
 const reviews = [
   {
@@ -10,6 +11,7 @@ const reviews = [
     comment:
       "Lucktang provided exceptional service and their team was very professional.",
     image: "/images/p1.jpg",
+    rating: 5,
   },
   {
     id: 2,
@@ -17,6 +19,7 @@ const reviews = [
     comment:
       "I am extremely satisfied with the quality of work delivered by Lucktang.",
     image: "/images/p10.jpg",
+    rating: 4,
   },
   {
     id: 3,
@@ -24,6 +27,7 @@ const reviews = [
     comment:
       "Their innovative solutions helped our business grow significantly.",
     image: "/images/p3.jpg",
+    rating: 5,
   },
   {
     id: 4,
@@ -31,6 +35,7 @@ const reviews = [
     comment:
       "Their innovative solutions helped our business grow significantly.",
     image: "/images/p4.jpg",
+    rating: 4,
   },
   {
     id: 5,
@@ -38,6 +43,7 @@ const reviews = [
     comment:
       "Their innovative solutions helped our business grow significantly.",
     image: "/images/p5.jpg",
+    rating: 5,
   },
   // Add more reviews as needed
 ];
@@ -87,6 +93,11 @@ const ClientReview: React.FC = () => {
               </div>
               <div className="px-4 md:px-0">
                 <p className="text-gray-300 text-center">{review.comment}</p>
+                <div className="flex justify-center mt-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <FaStar key={i} className="text-yellow-500" />
+                  ))}
+                </div>
               </div>
             </div>
           ))}

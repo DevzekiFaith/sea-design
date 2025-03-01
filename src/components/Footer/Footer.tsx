@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           />
         </div>
         <div className="md:w-1/3 text-center mr-6">
-          <h2 className="text-2xl font-bold mb-4 transform transition-transform duration-500 hover:translate-y-1">
+          <h2 className="text-2xl text-[#75AAF0] font-bold mb-4 transform transition-transform duration-500 hover:translate-y-1">
             Lucktang Int&apos;l Limited
           </h2>
           <p className="mb-2 transform transition-transform duration-500 hover:translate-x-1">

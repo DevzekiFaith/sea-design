@@ -3,7 +3,7 @@ import React from "react";
 const Company: React.FC = () => {
   return (
     <div className="container mx-auto p-8 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-center mb-8 transform transition-transform duration-500 hover:translate-y-1">
+      <h1 className="text-4xl text-blue-500 font-bold text-center mb-8 transform transition-transform duration-500 hover:translate-y-1">
         Company Overview
       </h1>
       <div className="bg-black  p-8 rounded-2xl shadow-lg max-w-3xl transform transition-transform duration-500 hover:scale-105">

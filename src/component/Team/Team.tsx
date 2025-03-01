@@ -31,7 +31,7 @@ const teamMembers = [
 const Team: React.FC = () => {
   return (
     <div className="container mx-auto p-8">
-      <h2 className="text-3xl font-bold text-center mb-8">Meet Our Team</h2>
+      <h2 className="text-3xl font-bold text-blue-500 text-center mb-8">Meet Our Team</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {teamMembers.map((member) => (
           <div key={member.id} className="bg-black shadow-md p-6 rounded-2xl">

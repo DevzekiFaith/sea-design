@@ -4,7 +4,7 @@ import Image from "next/image";
 const History: React.FC = () => {
   return (
     <div className="container mx-auto p-8 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-center mb-8 text-white">
+      <h1 className="text-4xl font-bold text-center mb-8 text-blue-500">
         History
       </h1>
       <div className="bg-black p-8 shadow-lg flex flex-col items-center">
@@ -15,11 +15,11 @@ const History: React.FC = () => {
               alt="Company History"
               width={500}
               height={500}
-              className="rounded-lg"
+              className="rounded-lg w-full md:w-auto"
             />
           </div>
           <div className="md:w-1/2 w-full transform transition-transform duration-500 hover:scale-x-105">
-            <div className="w-[500px] p-8">
+            <div className="w-full md:w-[500px] p-8">
               <p className="text-lg mb-6 text-white text-center md:text-left">
                 LIMSCO was established with a clear vision: to provide top-tier
                 maritime services and products that meet the highest industry
