@@ -22,7 +22,7 @@ const AboutPage: React.FC = () => {
           />
         </div>
         <div className="p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-2 hover:shadow-2xl">
-          <h2 className="text-3xl font-semibold mb-4 text-white">
+          <h2 className="text-3xl font-semibold mb-4 text-blue-500">
             Our Mission
           </h2>
           <p className="text-lg mb-6 text-white">
