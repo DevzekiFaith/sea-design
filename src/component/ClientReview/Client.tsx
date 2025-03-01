@@ -54,8 +54,8 @@ const ClientReview: React.FC = () => {
 
   return (
     <div className="container mx-auto p-8 flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-3xl font-bold text-center mb-8">Client Reviews</h2>
-      <div className="relative overflow-hidden w-[550px] max-w-4xl rounded-2xl">
+      <h2 className="text-3xl font-bold text-center mb-10">Client Reviews</h2>
+      <div className="relative overflow-hidden w-full max-w-4xl rounded-2xl">
         <div
           className="flex transition-transform duration-500"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -63,9 +63,11 @@ const ClientReview: React.FC = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="min-w-full bg-black shadow-md p-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg h-96 flex flex-col justify-center"
+              className="min-w-full bg-black shadow-md p-8 transform 
+              transition-transform duration-300 hover:scale-105 hover:shadow-lg h-auto md:h-96 flex flex-col 
+              justify-center mb-10"
             >
-              <div className="flex justify-center items-center mb-4">
+              <div className="flex justify-center items-center mb-4 mt-6">
                 <div className="flex items-center flex-col">
                   <div>
                     <Image
@@ -77,13 +79,15 @@ const ClientReview: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold pt-10 pb-5">
+                    <h3 className="text-xl font-semibold pt-10 pb-5 text-white">
                       {review.name}
                     </h3>
                   </div>
                 </div>
               </div>
-              <p className="text-gray-700 text-center">{review.comment}</p>
+              <div className="px-4 md:px-0">
+                <p className="text-gray-300 text-center">{review.comment}</p>
+              </div>
             </div>
           ))}
         </div>

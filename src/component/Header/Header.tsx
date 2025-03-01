@@ -20,16 +20,28 @@ const Header: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold">Lucktang</h1>
         <nav className="hidden md:flex">
-          <Link href="/" className="mr-4 hover:underline cursor-pointer">
+          <Link
+            href="/"
+            className="mr-4 hover:bg-blue-500 w-[80px] p-2 rounded-2xl cursor-pointer text-center"
+          >
             <span>Home</span>
           </Link>
-          <Link href="/about" className="mr-4 hover:underline cursor-pointer">
+          <Link
+            href="/about"
+            className="mr-4 hover:bg-blue-500 w-[80px] p-2 rounded-2xl cursor-pointer text-center"
+          >
             <span>About</span>
           </Link>
-          <Link href="/services" className="mr-4 hover:underline cursor-pointer">
+          <Link
+            href="/services"
+            className="mr-4 hover:bg-blue-500 w-[80px] p-2 rounded-2xl cursor-pointer "
+          >
             <span>Services</span>
           </Link>
-          <Link href="/contact" className="hover:underline cursor-pointer">
+          <Link
+            href="/contact"
+            className="hover:bg-blue-500 w-[80px] p-2 rounded-2xl cursor-pointer "
+          >
             <span>Contact</span>
           </Link>
         </nav>

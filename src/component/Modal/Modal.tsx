@@ -11,14 +11,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center z-50">
-      <div className="bg-blue-400 p-8 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3 relative">
+      <div className="bg-blue-500 p-8 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3 relative">
         <button
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl"
           onClick={onClose}
         >
           &times;
         </button>
-        <h2 className="text-2xl font-bold mb-4">Navigation</h2>
+        <h2 className="text-2xl font-bold mb-4 text-white">Navigation</h2>
         <nav className="flex flex-col space-y-4">
           <Link href="/" onClick={onClose}>
             <span className="text-lg text-white hover:underline">Home</span>
@@ -27,14 +27,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             <span className="text-lg text-white hover:underline">About</span>
           </Link>
           <Link href="/services" onClick={onClose}>
-            <span className="text-lg text-white hover:underline">
-              Services
-            </span>
+            <span className="text-lg text-white hover:underline">Services</span>
           </Link>
           <Link href="/contact" onClick={onClose}>
-            <span className="text-lg text-white hover:underline">
-              Contact
-            </span>
+            <span className="text-lg text-white hover:underline">Contact</span>
           </Link>
         </nav>
       </div>
