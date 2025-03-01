@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import Header from "@/component/Header/Header";
 import Mission from "@/component/Mission/Mission";
 import Vision from "@/component/Vision/Vision";
@@ -12,9 +12,7 @@ import Footer from "@/components/Footer/Footer";
 export default function Home() {
   return (
     <div className="bg-black min-h-screen">
-      <section>
-        <Header />
-      </section>
+      <Header />
       <main className="container mx-auto p-4">
         <section>
           <HeroPage />
