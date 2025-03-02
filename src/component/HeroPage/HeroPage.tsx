@@ -9,10 +9,10 @@ const slides = [
     id: 1,
     src: "/images/s6.jpg",
     alt: "Hero Background 1",
-    title: "Welcome to Lucktang Int'l Limited",
+    title: "Welcome to Lucktang Int&apos;l Limited",
     description:
       "At Lucktang, we are committed to revolutionizing the Marine space with cutting-edge solutions for modern Water Works.",
-    statement: "CEO's Statement",
+    statement: "CEO&apos;s Statement",
     quote:
       "At Lucktang, innovation drives everything we do, focusing on delivering the future today.",
   },
@@ -77,10 +77,8 @@ const HeroPage: React.FC = () => {
                 </h3>
                 <p className="italic mb-4">{slide.quote}</p>
                 <Link href="/ceostatement" legacyBehavior>
-                  <button className=" bg-blue-800 text-white px-6 py-3 
-                  font-semibold
-                   hover:bg-blue-700 transition duration-300 cursor-pointer">
-                    Read CEO's Statement
+                  <button className="bg-blue-800 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer">
+                    Read CEO&apos;s Statement
                   </button>
                 </Link>
               </div>
