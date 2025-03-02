@@ -9,12 +9,12 @@ const slides = [
     id: 1,
     src: "/images/s6.jpg",
     alt: "Hero Background 1",
-    title: "Welcome to Lucktang Int&apos;l Limited",
+    title: "Welcome to Lucktang Intl Limited",
     description:
       "At Lucktang, we are committed to revolutionizing the Marine space with cutting-edge solutions for modern Water Works.",
-    statement: "CEO&apos;s Statement",
+    statement: "CEOs Statement",
     quote:
-      "At Lucktang, innovation drives everything we do, focusing on delivering the future today.",
+      "At Lucktang innovation drives everything we do, focusing on delivering the future today.",
   },
   {
     id: 2,
