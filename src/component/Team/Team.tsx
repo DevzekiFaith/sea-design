@@ -14,7 +14,7 @@ const teamMembers = [
     id: 2,
     name: "Njideka Nwalor  BSC, BSN, Hon. D.N",
     role: "COO",
-    image: "/images/me4.jpg",
+    image: "/images/coo.jpg",
     content:
       "Njideka Nwalor is the COO of Lucktang Int'l Limited. She oversees the company's operations, ensuring efficiency and effectiveness in all processes.",
   },
