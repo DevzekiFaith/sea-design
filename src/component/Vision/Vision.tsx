@@ -4,7 +4,7 @@ import Image from "next/image";
 const Vision: React.FC = () => {
   return (
     <div className="bg-black p-8 rounded-2xl shadow-lg flex flex-col items-center">
-      <h2 className="text-3xl font-bold mb-4 text-white">Our Vision</h2>
+      <h2 className="text-3xl font-bold mb-4 text-blue-500">Our Vision</h2>
       <div className="flex flex-col md:flex-row items-center">
         <div className="mb-4 md:mb-0 md:mr-4 transform transition-transform duration-500 hover:translate-x-2">
           <Image

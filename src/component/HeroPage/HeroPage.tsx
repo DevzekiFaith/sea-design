@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const slides = [
   {
@@ -50,7 +51,7 @@ const HeroPage: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative h-screen mt-[6rem] ">
+    <section className="relative h-screen mt-[6rem]">
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <div
@@ -67,14 +68,21 @@ const HeroPage: React.FC = () => {
               quality={100}
               className="z-0"
             />
-            <div className="absolute inset-0 bg-black opacity-60 flex items-center justify-center ">
+            <div className="absolute inset-0 bg-black opacity-60 flex items-center justify-center">
               <div className="text-center text-white p-8">
                 <h1 className="text-5xl font-bold mb-4">{slide.title}</h1>
                 <p className="text-lg mb-4">{slide.description}</p>
                 <h3 className="text-2xl font-semibold mb-2">
                   {slide.statement}
                 </h3>
-                <p className="italic">{slide.quote}</p>
+                <p className="italic mb-4">{slide.quote}</p>
+                <Link href="/ceostatement" legacyBehavior>
+                  <button className=" bg-blue-800 text-white px-6 py-3 
+                  font-semibold
+                   hover:bg-blue-700 transition duration-300 cursor-pointer">
+                    Read CEO's Statement
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
