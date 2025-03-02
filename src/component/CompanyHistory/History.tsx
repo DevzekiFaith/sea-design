@@ -19,7 +19,7 @@ const History: React.FC = () => {
             />
           </div>
           <div className="md:w-1/2 w-full transform transition-transform duration-500 hover:scale-x-105">
-            <div className="w-full md:w-[500px] p-8">
+            <div className="w-full md:w-[600px] p-8">
               <p className="text-lg mb-6 text-white text-center md:text-left">
                 LIMSCO was established with a clear vision: to provide top-tier
                 maritime services and products that meet the highest industry
