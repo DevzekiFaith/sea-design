@@ -6,7 +6,7 @@ const teamMembers = [
     id: 1,
     name: "John Doe",
     role: "CEO",
-    image: "/images/p3.jpg",
+    image: "/images/m0.jpg",
     content:
       "John Doe is the CEO of Lucktang Int'l Limited. With over 20 years of experience in the marine industry, he leads the company with a vision for innovation and excellence.",
   },
@@ -14,7 +14,7 @@ const teamMembers = [
     id: 2,
     name: "Jane Smith",
     role: "COO",
-    image: "/images/p5.jpg",
+    image: "/images/me4.jpg",
     content:
       "Jane Smith is the COO of Lucktang Int'l Limited. She oversees the company's operations, ensuring efficiency and effectiveness in all processes.",
   },
@@ -22,7 +22,7 @@ const teamMembers = [
     id: 3,
     name: "Michael Johnson",
     role: "Executive",
-    image: "/images/p1.jpg",
+    image: "/images/me7.jpg",
     content:
       "Michael Johnson is an Executive at Lucktang Int'l Limited. He is responsible for strategic planning and business development, driving the company's growth and success.",
   },
