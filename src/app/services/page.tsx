@@ -44,9 +44,11 @@ const ServicesPage: React.FC = () => {
   return (
     <div>
       <Header />
-      <HeroPage/>
+      <HeroPage />
       <div className="container mx-auto p-4 pt-[8rem]">
-        <h1 className="text-4xl font-bold text-center mb-12">Our Services</h1>
+        <div className="text-center text-blue-500 mt-[2rem] mb-[2rem] text-bold text-4xl uppercase">
+          Features
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service) => (
             <div

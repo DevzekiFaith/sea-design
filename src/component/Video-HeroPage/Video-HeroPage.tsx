@@ -4,13 +4,13 @@ import React from "react";
 
 const HeroPage: React.FC = () => {
   return (
-    <div className="pt-[8rem] p-4 md:p-8 w-full h-full">
-      <div className="relative h-screen ">
+    <div className="pt-[8rem] p-4 md:p-8 w-full h-screen">
+      <div className="relative h-screen xl:mt-[6rem]">
         <video
           autoPlay
           loop
           muted
-          className="absolute inset-0 w-full h-full xl:pt-[6rem] object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/images/f2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
