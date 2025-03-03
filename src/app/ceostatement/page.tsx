@@ -8,7 +8,7 @@ const CEOStatement: React.FC = () => {
     <div>
       <Header />
       <div className="container mx-auto p-4 md:p-8 pt-[6rem]">
-        <h1 className="text-4xl font-bold text-center xl:pt-[6rem] pt-[3rem] mb-8 text-blue-600">
+        <h1 className="text-4xl font-bold text-center xl:pt-[6rem] pt-[3rem] mb-8 text-blue-500 ml-[3rem]">
           Statement From the CEO
         </h1>
         <div className="flex flex-col md:flex-row items-center p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-2 hover:shadow-2xl">
@@ -22,7 +22,7 @@ const CEOStatement: React.FC = () => {
             />
           </div>
           <div className="md:w-2/3 text-white">
-            <p className="text-lg mb-6">
+            <p className="text-lg mb-6 text-center">
               Dear Clients and Prospective Clients,
             </p>
             <div className="mb-6 p-8 rounded-lg xl:w-[800px]">
@@ -65,27 +65,33 @@ const CEOStatement: React.FC = () => {
                 service.
               </p>
             </div>
-            <p className="text-lg mb-6">
-              To our existing clients, thank you for your continued trust and
-              support. We are grateful for the opportunity to serve you and look
-              forward to continuing our successful partnership. To our
-              prospective clients, we invite you to experience the Lucktang
-              difference. We are confident that our expertise, dedication, and
-              commitment to excellence will exceed your expectations and help
-              you achieve your goals.
-            </p>
-            <p className="text-lg mb-6">
-              Thank you for considering Lucktang as your trusted partner in the
-              marine industry. We look forward to working with you and
-              contributing to your success.
-            </p>
-            <p className="text-lg mb-6">
-              Sincerely,
-              <br />
-              [CEO Name]
-              <br />
-              CEO, Lucktang
-            </p>
+            <div className="mb-6 p-8 rounded-lg xl:w-[800px]">
+              <p className="text-lg mb-6">
+                To our existing clients, thank you for your continued trust and
+                support. We are grateful for the opportunity to serve you and
+                look forward to continuing our successful partnership. To our
+                prospective clients, we invite you to experience the Lucktang
+                difference. We are confident that our expertise, dedication, and
+                commitment to excellence will exceed your expectations and help
+                you achieve your goals.
+              </p>
+              <p className="text-lg mb-6">
+                Thank you for considering Lucktang as your trusted partner in
+                the marine industry. We look forward to working with you and
+                contributing to your success.
+              </p>
+              <p className="text-lg mb-6 ">
+                Sincerely,
+                <br />
+                <span className="text-blue-500">
+
+                Prince (Dr) Andrew Lucky Eseigbe IGBERAESE, D. Engr, M, SC, FCP,
+                MIEEE, FIMC, CMC
+                </span>
+                <br />
+                CEO, Lucktang
+              </p>
+            </div>
           </div>
         </div>
       </div>
