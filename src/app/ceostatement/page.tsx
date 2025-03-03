@@ -8,10 +8,10 @@ const CEOStatement: React.FC = () => {
     <div>
       <Header />
       <div className="container mx-auto p-4 md:p-8 pt-[6rem]">
-        <h1 className="text-4xl font-bold text-center xl:pt-[6rem] pt-[3rem] mb-8 text-blue-500 ml-[3rem]">
+        <h1 className="text-4xl font-bold text-center xl:pt-[6rem] pt-[3rem] mb-8 text-blue-500">
           Statement From the CEO
         </h1>
-        <div className="flex flex-col md:flex-row items-center p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-2 hover:shadow-2xl">
+        <div className="flex flex-col md:flex-row items-center p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-8 hover:shadow-2xl bg-gray-900">
           <div className="md:w-1/3 mb-6 md:mb-0 md:mr-6">
             <Image
               src="/images/ceo1.jpg"
@@ -22,10 +22,10 @@ const CEOStatement: React.FC = () => {
             />
           </div>
           <div className="md:w-2/3 text-white">
-            <p className="text-lg mb-6 text-center">
+            <p className="text-lg mb-6 text-center md:text-left">
               Dear Clients and Prospective Clients,
             </p>
-            <div className="mb-6 p-8 rounded-lg xl:w-[800px]">
+            <div className="mb-6 p-4 md:p-8 rounded-lg">
               <p className="text-lg mb-6">
                 Welcome to Lucktang! As the CEO of this esteemed organization, I
                 am honored to address you and share our vision, mission, and
@@ -65,7 +65,7 @@ const CEOStatement: React.FC = () => {
                 service.
               </p>
             </div>
-            <div className="mb-6 p-8 rounded-lg xl:w-[800px]">
+            <div className="mb-6 p-4 md:p-8 rounded-lg">
               <p className="text-lg mb-6">
                 To our existing clients, thank you for your continued trust and
                 support. We are grateful for the opportunity to serve you and
@@ -80,13 +80,12 @@ const CEOStatement: React.FC = () => {
                 the marine industry. We look forward to working with you and
                 contributing to your success.
               </p>
-              <p className="text-lg mb-6 ">
+              <p className="text-lg mb-6">
                 Sincerely,
                 <br />
                 <span className="text-blue-500">
-
-                Prince (Dr) Andrew Lucky Eseigbe IGBERAESE, D. Engr, M, SC, FCP,
-                MIEEE, FIMC, CMC
+                  Prince (Dr) Andrew Lucky Eseigbe IGBERAESE, D. Engr, M, SC,
+                  FCP, MIEEE, FIMC, CMC
                 </span>
                 <br />
                 CEO, Lucktang

@@ -8,6 +8,7 @@ import ClientReview from "@/component/ClientReview/Client";
 import HeroPage from "@/component/HeroPage/HeroPage";
 import Team from "@/component/Team/Team";
 import Footer from "@/components/Footer/Footer";
+import Partners from "@/component/Partners/Partners";
 
 export default function Home() {
   return (
@@ -31,6 +32,9 @@ export default function Home() {
         </section>
         <section>
           <ClientReview />
+        </section>
+        <section>
+          <Partners/>
         </section>
         <section>
           <Team />
