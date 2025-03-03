@@ -9,7 +9,7 @@ const CEOStatement: React.FC = () => {
       <Header />
       <div className="container mx-auto p-4 md:p-8 pt-[6rem]">
         <h1 className="text-4xl font-bold text-center xl:pt-[6rem] pt-[3rem] mb-8 text-blue-600">
-          CEO Statement
+          Statement From the CEO
         </h1>
         <div className="flex flex-col md:flex-row items-center p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-2 hover:shadow-2xl">
           <div className="md:w-1/3 mb-6 md:mb-0 md:mr-6">
