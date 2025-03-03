@@ -60,7 +60,7 @@ const ClientReview: React.FC = () => {
 
   return (
     <div className="container mx-auto p-8 flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-3xl font-bold text-center mb-10">Client Reviews</h2>
+      <h2 className="text-3xl font-bold text-center mb-10 text-blue-500">Client Reviews</h2>
       <div className="relative overflow-hidden w-full max-w-4xl rounded-2xl">
         <div
           className="flex transition-transform duration-500"
@@ -69,13 +69,13 @@ const ClientReview: React.FC = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="min-w-full bg-black shadow-md p-8 transform 
-              transition-transform duration-300 hover:scale-105 hover:shadow-lg h-auto md:h-96 flex flex-col 
-              justify-center mb-10"
+              className="min-w-full bg-[#040200] shadow-md p-8 transform 
+              transition-transform duration-300 hover:scale-105 hover:shadow-lg h-auto md:h-100 flex flex-col 
+              justify-center mb-[8rem] pt-[6rem]"
             >
               <div className="flex justify-center items-center mb-4 mt-6">
                 <div className="flex items-center flex-col">
-                  <div>
+                  <div className="">
                     <Image
                       src={review.image}
                       alt={review.name}

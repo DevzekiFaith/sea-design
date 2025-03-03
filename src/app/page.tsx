@@ -11,7 +11,7 @@ import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-[#020403] min-h-screen">
       <Header />
       <main className="container mx-auto p-4">
         <section>
