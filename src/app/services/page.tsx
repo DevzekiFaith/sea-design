@@ -46,14 +46,19 @@ const ServicesPage: React.FC = () => {
       <Header />
       <HeroPage />
       <div className="container mx-auto p-4 pt-[8rem]">
-        <div className="text-center text-blue-500 mt-[2rem] mb-[2rem] text-extrabold text-4xl uppercase">
+        <div
+          className="text-center text-blue-500 mt-[2rem] 
+        mb-[2rem] text-extrabold text-4xl uppercase"
+        >
           Features
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-[#020403]  rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center"
+              className="bg-[#020403]  rounded-lg p-6 shadow-lg 
+              hover:shadow-xl transition-shadow 
+              duration-300 flex flex-col items-center"
             >
               <Image
                 src={service.image}
