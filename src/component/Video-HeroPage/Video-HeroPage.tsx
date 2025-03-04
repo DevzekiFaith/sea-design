@@ -15,7 +15,7 @@ const HeroPage: React.FC = () => {
           <source src="/images/f2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black opacity-80">
+        <div className="absolute inset-0 bg-black opacity-60">
         </div>
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white p-4 md:p-8">

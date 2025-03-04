@@ -48,7 +48,7 @@ const ServicesPage: React.FC = () => {
       <div className="container mx-auto p-4 pt-[8rem]">
         <div
           className="text-center text-blue-500 mt-[2rem] 
-        mb-[2rem] text-extrabold text-4xl uppercase"
+        mb-[2rem] font-extrabold text-4xl uppercase"
         >
           Features
         </div>
