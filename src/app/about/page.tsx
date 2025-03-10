@@ -8,15 +8,13 @@ import Header from "@/component/Header/Header";
 const AboutPage: React.FC = () => {
   return (
     <div>
-      <div>
       <Header />
-      </div>
       <div className="container mx-auto p-4 md:p-8">
         <h1 className="text-4xl font-bold text-center mb-8 text-blue-600 pt-[6rem]">
           About Lucktang
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-2 hover:shadow-2xl">
+          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-4 hover:scale-105 hover:shadow-2xl">
             <Image
               src="/images/se4.jpg"
               alt="About Lucktang"
@@ -25,7 +23,7 @@ const AboutPage: React.FC = () => {
               className="rounded-lg mb-4"
             />
           </div>
-          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-2 hover:shadow-2xl">
+          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-4 hover:scale-105 hover:shadow-2xl">
             <h2 className="text-3xl font-semibold mb-4 text-blue-500">
               Our Mission
             </h2>
@@ -46,26 +44,44 @@ const AboutPage: React.FC = () => {
               marine industry.
             </p>
           </div>
-          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-2 hover:shadow-2xl">
+          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-4 hover:scale-105 hover:shadow-2xl">
             <h2 className="text-3xl font-semibold mb-4 text-white">
               Our Values
             </h2>
             <ul className="list-disc list-inside text-lg mb-6 text-white">
               <li className="mb-2">
-                <strong>Innovation:</strong> We embrace new ideas and
-                technologies to stay ahead in the marine industry.
+                <strong className="font-extrabold text-2xl">Innovation</strong>{" "}
+                <br />{" "}
+                <span className="text-blue-400">
+                  We embrace new ideas and technologies to stay ahead in the
+                  marine industry.
+                </span>
               </li>
               <li className="mb-2">
-                <strong>Quality:</strong> We are committed to delivering
-                top-notch marine products and services.
+                <strong className="font-extrabold text-2xl">Quality</strong>{" "}
+                <br />{" "}
+                <span className="text-blue-400">
+                  {" "}
+                  We are committed to delivering top-notch marine products and
+                  services.
+                </span>
               </li>
               <li className="mb-2">
-                <strong>Integrity:</strong> We conduct our business with honesty
-                and transparency.
+                <strong className="font-extrabold text-2xl">Integrity</strong>{" "}
+                <br />{" "}
+                <span className="text-blue-400">
+                  We conduct our business with honesty and transparency.
+                </span>
               </li>
               <li className="mb-2">
-                <strong>Customer Focus:</strong> We prioritize our clients&apos;
-                needs and work closely with them to achieve their vision.
+                <strong className="font-extrabold text-2xl">
+                  Customer Focus
+                </strong>{" "}
+                <br />{" "}
+                <span className="text-blue-400">
+                  We prioritize our clients&apos; needs and work closely with
+                  them to achieve their vision.
+                </span>
               </li>
             </ul>
             <h2 className="text-3xl font-semibold mb-4 text-blue-500">
@@ -78,7 +94,7 @@ const AboutPage: React.FC = () => {
               ensure their success in the marine industry.
             </p>
           </div>
-          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-2 hover:shadow-2xl">
+          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-4 hover:scale-105 hover:shadow-2xl">
             <Image
               src="/images/t2.jpg"
               alt="Our Team"
@@ -87,7 +103,7 @@ const AboutPage: React.FC = () => {
               className="rounded-lg mb-4"
             />
           </div>
-          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-2 hover:shadow-2xl">
+          <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-4 hover:scale-105 hover:shadow-2xl">
             <h2 className="text-3xl font-semibold mb-4 text-white">
               Contact Us
             </h2>
@@ -102,8 +118,8 @@ const AboutPage: React.FC = () => {
             </p>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };

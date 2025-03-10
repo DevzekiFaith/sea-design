@@ -12,9 +12,6 @@ const slides = [
     title: "Welcome to Lucktang Intl Limited",
     description:
       "At Lucktang, we are committed to revolutionizing the Marine space with cutting-edge solutions for modern Water Works.",
-    statement: "CEOs Statement",
-    quote:
-      "At Lucktang innovation drives everything we do, focusing on delivering the future today.",
   },
   {
     id: 2,
@@ -51,7 +48,7 @@ const HeroPage: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative h-screen mt-[6rem]">
+    <section className="relative h-screen mt-[8rem]">
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <div
@@ -70,7 +67,7 @@ const HeroPage: React.FC = () => {
             />
             <div className="absolute inset-0 bg-black opacity-60 flex items-center justify-center">
               <div className="text-center text-white p-8">
-                <h1 className="text-5xl font-bold mb-4">{slide.title}</h1>
+                <h1 className="text-5xl font-bold mb-4 mt-8">{slide.title}</h1>
                 <p className="text-lg mb-4">{slide.description}</p>
                 <h3 className="text-2xl font-semibold mb-2">
                   {slide.statement}

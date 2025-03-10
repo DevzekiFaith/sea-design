@@ -14,7 +14,7 @@ const CEOStatement: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-8 hover:shadow-2xl bg-gray-900">
           <div className="md:w-1/3 mb-6 md:mb-0 md:mr-6">
             <Image
-              src="/images/ceo1.jpg"
+              src="/images/ceo3.jpg"
               alt="CEO"
               width={800}
               height={800}
