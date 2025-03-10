@@ -48,7 +48,7 @@ const HeroPage: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative h-screen mt-[8rem]">
+    <section className="relative h-screen mt-[6rem]">
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
           <div
@@ -66,7 +66,7 @@ const HeroPage: React.FC = () => {
               className="z-0"
             />
             <div className="absolute inset-0 bg-black opacity-60 flex items-center justify-center">
-              <div className="text-center text-white p-8">
+              <div className="text-center text-white p-8 transform transition-transform duration-500 hover:scale-105">
                 <h1 className="text-5xl font-bold mb-4 mt-8">{slide.title}</h1>
                 <p className="text-lg mb-4">{slide.description}</p>
                 <h3 className="text-2xl font-semibold mb-2">
@@ -75,7 +75,7 @@ const HeroPage: React.FC = () => {
                 <p className="italic mb-4">{slide.quote}</p>
                 <Link href="/ceostatement" legacyBehavior>
                   <button className="bg-blue-800 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer">
-                    Read CEOs Statement
+                    Read CEO's Statement
                   </button>
                 </Link>
               </div>

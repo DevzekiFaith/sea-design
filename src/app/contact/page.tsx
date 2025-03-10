@@ -16,12 +16,12 @@ export default function Contact() {
         <Header />
       </div>
       <div className="container mx-auto p-8 pt-[6rem]">
-        <div className="bg-black p-8 rounded-2xl shadow-lg mt-10 flex flex-col md:flex-row items-center">
-          {/* <div>
-            <h2 className="text-3xl font-bold mb-6 text-blue-600 transform transition-transform duration-500 hover:translate-y-6">
+          <div>
+            <h2 className="text-3xl font-extrabold mt-6 text-center text-balance mb-6 text-blue-600 transform transition-transform duration-500 hover:translate-y-6">
               Contact Us
             </h2>
-          </div> */}
+          </div>
+        <div className="bg-black p-8 rounded-2xl shadow-lg mt-10 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-6 md:mb-0 md:mr-6 transform transition-transform duration-500 hover:scale-y-105">
             <Image
               src="/images/watermap.jpg"
