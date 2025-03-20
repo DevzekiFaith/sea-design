@@ -9,14 +9,18 @@ import HeroPage from "@/component/HeroPage/HeroPage";
 import Team from "@/component/Team/Team";
 import Footer from "@/components/Footer/Footer";
 import Partners from "@/component/Partners/Partners";
+import Gas from "@/component/Gas/Gas";
 
 export default function Home() {
   return (
-    <div className="bg-[#020403] min-h-screen">
+    <div className="bg-[#020403] min-h-screen text-white">
       <Header />
       <main className="container mx-auto p-4">
-        <section>
+        <section className="mb-10">
           <HeroPage />
+        </section>
+        <section className="mt-10">
+          <Gas/>
         </section>
         <section className="mt-10">
           <Vision />
@@ -30,19 +34,17 @@ export default function Home() {
         <section className="mt-10">
           <Mission />
         </section>
-        <section>
+        <section className="mt-10">
           <ClientReview />
         </section>
-        <section>
-          <Partners/>
+        <section className="mt-10">
+          <Partners />
         </section>
-        <section>
+        <section className="mt-10">
           <Team />
         </section>
-        <section>
-          <Footer />
-        </section>
       </main>
+      <Footer />
     </div>
   );
 }

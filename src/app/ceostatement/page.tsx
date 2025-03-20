@@ -5,27 +5,33 @@ import Footer from "@/components/Footer/Footer";
 
 const CEOStatement: React.FC = () => {
   return (
-    <div>
+    <div className="bg-gray-900 text-white min-h-screen">
       <Header />
       <div className="container mx-auto p-4 md:p-8 pt-[6rem]">
         <h1 className="text-4xl font-bold text-center xl:pt-[6rem] pt-[3rem] mb-8 text-blue-500">
           Statement From the CEO
         </h1>
-        <div className="flex flex-col md:flex-row items-center p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-8 hover:shadow-2xl bg-gray-900">
+        <div
+          className="flex flex-col md:flex-row items-center p-8 
+        rounded-2xl shadow-lg transform transition-transform 
+        duration-500 hover:translate-y-4 hover:shadow-2xl"
+        >
           <div className="md:w-1/3 mb-6 md:mb-0 md:mr-6">
             <Image
               src="/images/ceo3.jpg"
               alt="CEO"
               width={800}
               height={800}
-              className="rounded-lg"
+              className="rounded-lg transform transition-transform 
+              duration-500 hover:scale-105"
             />
           </div>
           <div className="md:w-2/3 text-white">
             <p className="text-lg mb-6 text-center md:text-left">
               Dear Clients and Prospective Clients,
             </p>
-            <div className="mb-6 p-4 md:p-8 rounded-lg">
+            <div className="mb-6 p-4 md:p-8 rounded-lg bg-gray-800 
+            bg-opacity-50">
               <p className="text-lg mb-6">
                 Welcome to Lucktang! As the CEO of this esteemed organization, I
                 am honored to address you and share our vision, mission, and
@@ -65,7 +71,7 @@ const CEOStatement: React.FC = () => {
                 service.
               </p>
             </div>
-            <div className="mb-6 p-4 md:p-8 rounded-lg">
+            <div className="mb-6 p-4 md:p-8 rounded-lg bg-gray-800 bg-opacity-50">
               <p className="text-lg mb-6">
                 To our existing clients, thank you for your continued trust and
                 support. We are grateful for the opportunity to serve you and

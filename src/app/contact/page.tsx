@@ -16,11 +16,11 @@ export default function Contact() {
         <Header />
       </div>
       <div className="container mx-auto p-8 pt-[6rem]">
-          <div>
-            <h2 className="text-3xl font-extrabold mt-6 text-center text-balance mb-6 text-blue-600 transform transition-transform duration-500 hover:translate-y-6">
-              Contact Us
-            </h2>
-          </div>
+        <div>
+          <h2 className="text-3xl font-extrabold mt-6 text-center text-balance mb-6 text-blue-600 transform transition-transform duration-500 hover:translate-y-6">
+            Contact Us
+          </h2>
+        </div>
         <div className="bg-black p-8 rounded-2xl shadow-lg mt-10 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-6 md:mb-0 md:mr-6 transform transition-transform duration-500 hover:scale-y-105">
             <Image
@@ -96,6 +96,105 @@ export default function Contact() {
                   Aberdeen, Scotland
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row justify-center items-center mt-10 space-y-8 md:space-y-0 md:space-x-8">
+          <div className="p-8 rounded-2xl shadow-lg max-w-lg w-full">
+            <h3 className="text-2xl font-semibold mb-4 text-white transform transition-transform duration-500 hover:translate-x-6">
+              Schedule an Appointment
+            </h3>
+            <form className="space-y-4">
+              <div>
+                <label className="block text-white mb-2" htmlFor="name">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-white mb-2" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-white mb-2" htmlFor="phone">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-white mb-2" htmlFor="address">
+                  Address
+                </label>
+                <input
+                  type="text"
+                  id="address"
+                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-white mb-2" htmlFor="description">
+                  Description for Appointment
+                </label>
+                <textarea
+                  id="description"
+                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  rows={4}
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="bg-green-600 text-white px-6 py-3 
+                rounded-full font-semibold 
+                hover:bg-green-700 transition duration-300"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <div className="p-8 rounded-2xl shadow-lg max-w-lg w-full">
+            <h3 className="text-2xl font-semibold mb-4 text-white transform transition-transform duration-500 hover:translate-x-6">
+              Book an Appointment
+            </h3>
+            <p className="text-white mb-4">
+              You can also book an appointment directly using Calendly or Google
+              Calendar.
+            </p>
+            <div className="flex justify-center space-x-4 gap-5">
+              <a
+                href="https://calendly.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300"
+              >
+                Book with Calendly
+              </a>
+              <a
+                href="https://calendar.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition duration-300"
+              >
+                Book with Google
+              </a>
             </div>
           </div>
         </div>

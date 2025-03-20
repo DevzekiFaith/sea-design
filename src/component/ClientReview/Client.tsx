@@ -11,6 +11,7 @@ const reviews = [
     comment:
       "Lucktang provided exceptional service and their team was very professional.",
     image: "/images/p1.jpg",
+    position: "CEO, Bulltang",
     rating: 5,
   },
   {
@@ -19,6 +20,7 @@ const reviews = [
     comment:
       "I am extremely satisfied with the quality of work delivered by Lucktang.",
     image: "/images/p10.jpg",
+    position: "CEO, Oceanic Marine",
     rating: 4,
   },
   {
@@ -27,6 +29,7 @@ const reviews = [
     comment:
       "Their innovative solutions helped our business grow significantly.",
     image: "/images/p3.jpg",
+    position: "CEO, Car Merchants",
     rating: 5,
   },
   {
@@ -35,6 +38,7 @@ const reviews = [
     comment:
       "Their innovative solutions helped our business grow significantly.",
     image: "/images/p4.jpg",
+    position: "CEO, Peoples Purchase",
     rating: 4,
   },
   {
@@ -43,6 +47,7 @@ const reviews = [
     comment:
       "Their innovative solutions helped our business grow significantly.",
     image: "/images/p5.jpg",
+    position: "CEO, BoatSeller",
     rating: 5,
   },
   // Add more reviews as needed
@@ -60,7 +65,9 @@ const ClientReview: React.FC = () => {
 
   return (
     <div className="container mx-auto p-8 flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-3xl font-bold text-center mb-10 text-blue-500">Client Reviews</h2>
+      <h2 className="text-3xl font-bold text-center mb-10 text-blue-500">
+        Client Reviews
+      </h2>
       <div className="relative overflow-hidden w-full max-w-4xl rounded-2xl">
         <div
           className="flex transition-transform duration-500"
@@ -85,8 +92,13 @@ const ClientReview: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold pt-10 pb-5 text-white">
+                    <h3 className="text-xl font-semibold pt-4 pb-2 text-white">
                       {review.name}
+                    </h3>
+                  </div>
+                  <div>
+                    <h3 className="text-[14px] pb-2 text-white">
+                      {review.position}
                     </h3>
                   </div>
                 </div>

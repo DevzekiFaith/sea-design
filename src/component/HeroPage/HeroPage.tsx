@@ -35,6 +35,17 @@ const slides = [
     quote:
       "To provide the right product, at the right time, and for the right price, while also delivering peace of mind to our clients.",
   },
+  {
+    id: 4,
+    src: "/images/pl1.webp",
+    alt: "Hero Background 4",
+    title: "Excellence in Marine Engineering",
+    description:
+      "Our expertise in marine engineering ensures the highest standards of quality and safety.",
+    statement: "Our Commitment",
+    quote:
+      "To continuously innovate and improve our services to meet the evolving needs of our clients.",
+  },
 ];
 
 const HeroPage: React.FC = () => {
@@ -69,10 +80,12 @@ const HeroPage: React.FC = () => {
               <div className="text-center text-white p-8 transform transition-transform duration-500 hover:scale-105">
                 <h1 className="text-5xl font-bold mb-4 mt-8">{slide.title}</h1>
                 <p className="text-lg mb-4">{slide.description}</p>
-                <h3 className="text-2xl font-semibold mb-2">
-                  {slide.statement}
-                </h3>
-                <p className="italic mb-4">{slide.quote}</p>
+                {slide.statement && (
+                  <h3 className="text-2xl font-semibold mb-2">
+                    {slide.statement}
+                  </h3>
+                )}
+                {slide.quote && <p className="italic mb-4">{slide.quote}</p>}
                 <Link href="/ceostatement" legacyBehavior>
                   <button className="bg-blue-800 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer">
                     Read CEO's Statement
