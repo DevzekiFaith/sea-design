@@ -34,10 +34,10 @@ const COOProfile: React.FC = () => {
           <div className="md:w-2/3 text-white">
             <h2 className="text-3xl font-semibold mb-4">Njideka Nwalor</h2>
             <p className="text-lg mb-4">
-              <strong>Position:</strong> COO, Lucktang Intl Limited
+              <strong>Position</strong> COO, Lucktang Intl Limited
             </p>
             <p className="text-lg mb-4">
-              <strong>Ranking:</strong> BSC, BSN, Hon. D.N
+              <strong>Ranking</strong> BSC, BSN, Hon. D.N
             </p>
             <p className="text-lg mb-6">
               Njideka Nwalor is the Chief Operating Officer (COO) of Lucktang

@@ -48,7 +48,7 @@ const LNG: React.FC = () => {
               facilities and experienced team ensure efficient and reliable LNG
               operations.
             </p>
-            <p className="text-lg mb-6">Our LNG services include:</p>
+            <p className="text-lg mb-6">Our LNG services include</p>
             <ul className="list-disc list-inside text-lg mb-6">
               <li>LNG Processing</li>
               <li>LNG Storage</li>

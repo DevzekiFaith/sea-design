@@ -43,12 +43,12 @@ const CNG: React.FC = () => {
           </div>
           <div className="md:w-1/2 flex flex-col justify-center gap-5">
             <p className="text-lg mb-6">
-              At Lucktang Int'l Limited, we are dedicated to providing top-tier
+              At Lucktang Intl Limited, we are dedicated to providing top-tier
               CNG (Compressed Natural Gas) services. Our state-of-the-art
               facilities and experienced team ensure efficient and reliable CNG
               operations.
             </p>
-            <p className="text-lg mb-6">Our CNG services include:</p>
+            <p className="text-lg mb-6">Our CNG services include</p>
             <ul className="list-disc list-inside text-lg mb-6">
               <li>CNG Processing</li>
               <li>CNG Storage</li>
@@ -57,7 +57,7 @@ const CNG: React.FC = () => {
               <li>CNG Compression</li>
             </ul>
             <p className="text-lg mb-6">
-              Lucktang Int'l Limited has a rich history in the CNG business.
+              Lucktang Intl Limited has a rich history in the CNG business.
               Over the years, we have built a reputation for excellence and
               reliability in the industry. Our commitment to innovation and
               customer satisfaction has driven our success and growth in the CNG

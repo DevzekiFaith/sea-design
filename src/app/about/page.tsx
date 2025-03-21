@@ -28,7 +28,7 @@ const AboutPage: React.FC = () => {
               Our Mission
             </h2>
             <p className="text-lg mb-6 text-white">
-              Welcome to Lucktang! We are a leading marine company dedicated to
+              Welcome to Lucktang, We are a leading marine company dedicated to
               providing innovative solutions and exceptional services to our
               clients globally. Our team of experts is passionate about
               delivering top-tier maritime services that meet the unique needs
@@ -39,7 +39,7 @@ const AboutPage: React.FC = () => {
             <p className="text-lg mb-6 text-white">
               At Lucktang, our mission is to deliver high-quality marine
               services and solutions that empower businesses to achieve their
-              goals. We strive to exceed our clients&apos; expectations through
+              goals. We strive to exceed our clients expectations through
               creativity, innovation, and a commitment to excellence in the
               marine industry.
             </p>
@@ -79,7 +79,7 @@ const AboutPage: React.FC = () => {
                 </strong>{" "}
                 <br />{" "}
                 <span className="text-blue-400">
-                  We prioritize our clients&apos; needs and work closely with
+                  We prioritize our clients needs and work closely with
                   them to achieve their vision.
                 </span>
               </li>

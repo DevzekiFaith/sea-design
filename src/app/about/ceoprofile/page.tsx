@@ -36,10 +36,10 @@ const CEOProfile: React.FC = () => {
               Prince (Dr) Andrew Lucky Eseigbe IGBERAESE
             </h2>
             <p className="text-lg mb-4">
-              <strong>Position:</strong> CEO, Lucktang Intl Limited
+              <strong>Position</strong> CEO, Lucktang Intl Limited
             </p>
             <p className="text-lg mb-4">
-              <strong>Ranking:</strong> D. Engr, M, SC, FCP, MIEEE, FIMC, CMC
+              <strong>Ranking</strong> D. Engr, M, SC, FCP, MIEEE, FIMC, CMC
             </p>
             <p className="text-lg mb-6">
               Prince (Dr) Andrew Lucky Eseigbe IGBERAESE is the visionary leader

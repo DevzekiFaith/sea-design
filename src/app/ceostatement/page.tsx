@@ -33,7 +33,7 @@ const CEOStatement: React.FC = () => {
             <div className="mb-6 p-4 md:p-8 rounded-lg bg-gray-800 
             bg-opacity-50">
               <p className="text-lg mb-6">
-                Welcome to Lucktang! As the CEO of this esteemed organization, I
+                Welcome to Lucktang, As the CEO of this esteemed organization, I
                 am honored to address you and share our vision, mission, and
                 commitment to excellence in the marine industry. At Lucktang, we
                 pride ourselves on delivering top-tier maritime services and
