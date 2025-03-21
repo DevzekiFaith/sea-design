@@ -36,14 +36,14 @@ const CEOProfile: React.FC = () => {
               Prince (Dr) Andrew Lucky Eseigbe IGBERAESE
             </h2>
             <p className="text-lg mb-4">
-              <strong>Position:</strong> CEO, Lucktang Int'l Limited
+              <strong>Position:</strong> CEO, Lucktang Intl Limited
             </p>
             <p className="text-lg mb-4">
               <strong>Ranking:</strong> D. Engr, M, SC, FCP, MIEEE, FIMC, CMC
             </p>
             <p className="text-lg mb-6">
               Prince (Dr) Andrew Lucky Eseigbe IGBERAESE is the visionary leader
-              and CEO of Lucktang Int'l Limited. With over 20 years of
+              and CEO of Lucktang Intl Limited. With over 20 years of
               experience in the marine industry, he has built a reputable brand
               known for innovation, excellence, and commitment to quality.
             </p>
@@ -52,7 +52,7 @@ const CEOProfile: React.FC = () => {
               in the marine industry, providing top-tier maritime services and
               products. His dedication to understanding the unique needs of each
               client and delivering customized solutions has been instrumental
-              in the company's success.
+              in the companys success.
             </p>
             <p className="text-lg mb-6">
               Prince (Dr) Andrew Lucky Eseigbe IGBERAESE holds several
@@ -63,7 +63,7 @@ const CEOProfile: React.FC = () => {
             <p className="text-lg mb-6">
               At Lucktang, he has fostered a culture of excellence, integrity,
               and customer focus. The brand name built over time reflects the
-              company's commitment to delivering high-quality services and
+              companys commitment to delivering high-quality services and
               solutions that empower businesses to achieve their goals.
             </p>
           </div>

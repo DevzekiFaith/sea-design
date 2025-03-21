@@ -43,7 +43,7 @@ const LNG: React.FC = () => {
           </div>
           <div className="md:w-1/2 flex flex-col justify-center">
             <p className="text-lg mb-6">
-              At Lucktang Int'l Limited, we are dedicated to providing top-tier
+              At Lucktang Intl Limited, we are dedicated to providing top-tier
               LNG (Liquefied Natural Gas) services. Our state-of-the-art
               facilities and experienced team ensure efficient and reliable LNG
               operations.
@@ -57,7 +57,7 @@ const LNG: React.FC = () => {
               <li>LNG Regasification</li>
             </ul>
             <p className="text-lg mb-6">
-              Lucktang Int'l Limited has a rich history in the LNG business.
+              Lucktang Intl Limited has a rich history in the LNG business.
               Over the years, we have built a reputation for excellence and
               reliability in the industry. Our commitment to innovation and
               customer satisfaction has driven our success and growth in the LNG

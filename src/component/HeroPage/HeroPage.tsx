@@ -88,7 +88,7 @@ const HeroPage: React.FC = () => {
                 {slide.quote && <p className="italic mb-4">{slide.quote}</p>}
                 <Link href="/ceostatement" legacyBehavior>
                   <button className="bg-blue-800 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer">
-                    Read CEO's Statement
+                    Read CEOs Statement
                   </button>
                 </Link>
               </div>

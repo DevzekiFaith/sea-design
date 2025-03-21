@@ -43,11 +43,12 @@ const Dredging: React.FC = () => {
           </div>
           <div className="md:w-1/2 flex flex-col justify-center">
             <p className="text-lg mb-6">
-              At Lucktang Int'l Limited, we offer comprehensive dredging services to meet the diverse needs of our clients. Our state-of-the-art equipment and experienced team ensure efficient and effective dredging operations.
+              At Lucktang Intl Limited, we offer comprehensive dredging services
+              to meet the diverse needs of our clients. Our state-of-the-art
+              equipment and experienced team ensure efficient and effective
+              dredging operations.
             </p>
-            <p className="text-lg mb-6">
-              Our dredging services include:
-            </p>
+            <p className="text-lg mb-6">Our dredging services include</p>
             <ul className="list-disc list-inside text-lg mb-6">
               <li>Maintenance Dredging</li>
               <li>Capital Dredging</li>
@@ -57,10 +58,15 @@ const Dredging: React.FC = () => {
               <li>Port and Harbor Development</li>
             </ul>
             <p className="text-lg mb-6">
-              We are committed to delivering high-quality dredging services that meet the highest industry standards. Our team works closely with clients to understand their specific requirements and provide customized solutions that ensure the success of their projects.
+              We are committed to delivering high-quality dredging services that
+              meet the highest industry standards. Our team works closely with
+              clients to understand their specific requirements and provide
+              customized solutions that ensure the success of their projects.
             </p>
             <p className="text-lg mb-6">
-              With a focus on safety, efficiency, and environmental sustainability, we strive to exceed our clients' expectations and deliver exceptional results on every project.
+              With a focus on safety, efficiency, and environmental
+              sustainability, we strive to exceed our clients expectations and
+              deliver exceptional results on every project.
             </p>
           </div>
         </div>
