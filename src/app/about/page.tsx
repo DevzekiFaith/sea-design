@@ -20,7 +20,7 @@ const AboutPage: React.FC = () => {
               alt="About Lucktang"
               width={500}
               height={500}
-              className="rounded-lg mb-4"
+              className="rounded-lg mb-4 m-auto"
             />
           </div>
           <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-4 hover:scale-105 hover:shadow-2xl">
@@ -100,7 +100,7 @@ const AboutPage: React.FC = () => {
               alt="Our Team"
               width={500}
               height={300}
-              className="rounded-lg mb-4"
+              className="rounded-lg mb-4 m-auto"
             />
           </div>
           <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-4 hover:scale-105 hover:shadow-2xl">

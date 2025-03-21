@@ -12,7 +12,7 @@ const LNG: React.FC = () => {
           LNG Services
         </h1>
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="md:w-1/2 flex flex-col gap-4">
+          <div className="md:w-1/2 flex flex-col gap-8">
             <div className="relative h-80 w-full">
               <Image
                 src="/images/lng3.jpeg"

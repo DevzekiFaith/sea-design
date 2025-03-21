@@ -12,7 +12,7 @@ const CNG: React.FC = () => {
           CNG Services
         </h1>
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="md:w-1/2 flex flex-col gap-4">
+          <div className="md:w-1/2 flex flex-col gap-8">
             <div className="relative h-80 w-full transform transition-transform duration-500 hover:scale-105">
               <Image
                 src="/images/cng1.jpg"
@@ -41,7 +41,7 @@ const CNG: React.FC = () => {
               />
             </div>
           </div>
-          <div className="md:w-1/2 flex flex-col justify-center">
+          <div className="md:w-1/2 flex flex-col justify-center gap-5">
             <p className="text-lg mb-6">
               At Lucktang Int'l Limited, we are dedicated to providing top-tier
               CNG (Compressed Natural Gas) services. Our state-of-the-art

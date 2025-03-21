@@ -34,22 +34,22 @@ const COOProfile: React.FC = () => {
           <div className="md:w-2/3 text-white">
             <h2 className="text-3xl font-semibold mb-4">Njideka Nwalor</h2>
             <p className="text-lg mb-4">
-              <strong>Position:</strong> COO, Lucktang Int'l Limited
+              <strong>Position:</strong> COO, Lucktang Intl Limited
             </p>
             <p className="text-lg mb-4">
               <strong>Ranking:</strong> BSC, BSN, Hon. D.N
             </p>
             <p className="text-lg mb-6">
               Njideka Nwalor is the Chief Operating Officer (COO) of Lucktang
-              Int'l Limited. With extensive experience in the marine industry,
-              she oversees the company's operations, ensuring efficiency and
+              Intl Limited. With extensive experience in the marine industry,
+              she oversees the companys operations, ensuring efficiency and
               effectiveness in all processes.
             </p>
             <p className="text-lg mb-6">
               Under her leadership, Lucktang has streamlined its operations and
               enhanced its service delivery, contributing significantly to the
-              company's growth and success. Her strategic vision and operational
-              expertise have been pivotal in driving the company's mission
+              companys growth and success. Her strategic vision and operational
+              expertise have been pivotal in driving the companys mission
               forward.
             </p>
             <p className="text-lg mb-6">

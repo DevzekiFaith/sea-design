@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             alt="Sea Map"
             width={500}
             height={500}
-            className="w-[500px] h-[350px]"
+            className="w-[500px] h-[350px] m-auto"
           />
         </div>
         <div className="md:w-1/3 text-center mr-6">

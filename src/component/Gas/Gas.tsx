@@ -26,10 +26,18 @@ const Gas: React.FC = () => {
               />
             </div>
             <p className="text-lg mb-6">
-              Our LNG (Liquefied Natural Gas) gas service plant is equipped with state-of-the-art technology to provide efficient and reliable gas services. We ensure the highest standards of safety and quality in our operations, delivering LNG solutions that meet the needs of our clients.
+              Our LNG (Liquefied Natural Gas) gas service plant is equipped with
+              state-of-the-art technology to provide efficient and reliable gas
+              services. We ensure the highest standards of safety and quality in
+              our operations, delivering LNG solutions that meet the needs of
+              our clients.
             </p>
             <p className="text-lg mb-6">
-              Our LNG services include gas processing, storage, and distribution. We cater to a wide range of industries, providing customized solutions to meet their specific requirements. Our team of experts is dedicated to ensuring the smooth and efficient operation of our LNG plant.
+              Our LNG services include gas processing, storage, and
+              distribution. We cater to a wide range of industries, providing
+              customized solutions to meet their specific requirements. Our team
+              of experts is dedicated to ensuring the smooth and efficient
+              operation of our LNG plant.
             </p>
             <div className="flex justify-center">
               <Link href="/lng" legacyBehavior>
@@ -53,10 +61,17 @@ const Gas: React.FC = () => {
               />
             </div>
             <p className="text-lg mb-6">
-              Our CNG (Compressed Natural Gas) gas service plant is designed to provide high-quality gas services with a focus on efficiency and sustainability. We utilize advanced technology to compress natural gas, making it easier to store and transport.
+              Our CNG (Compressed Natural Gas) gas service plant is designed to
+              provide high-quality gas services with a focus on efficiency and
+              sustainability. We utilize advanced technology to compress natural
+              gas, making it easier to store and transport.
             </p>
             <p className="text-lg mb-6">
-              Our CNG services include gas compression, storage, and distribution. We serve various industries, offering tailored solutions to meet their unique needs. Our team of professionals is committed to maintaining the highest standards of safety and reliability in our CNG operations.
+              Our CNG services include gas compression, storage, and
+              distribution. We serve various industries, offering tailored
+              solutions to meet their unique needs. Our team of professionals is
+              committed to maintaining the highest standards of safety and
+              reliability in our CNG operations.
             </p>
             <div className="flex justify-center">
               <Link href="/cng" legacyBehavior>

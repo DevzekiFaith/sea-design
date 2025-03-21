@@ -162,11 +162,11 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="bg-green-600 text-white px-6 py-3 
-                rounded-full font-semibold 
+                className="bg-green-600 w-full text-white px-4 py-2 sm:px-6 sm:py-3 
+                rounded-full font-semibold text-sm sm:text-base 
                 hover:bg-green-700 transition duration-300"
               >
-                Submit
+                Submit Now
               </button>
             </form>
           </div>
