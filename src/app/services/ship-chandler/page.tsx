@@ -38,7 +38,7 @@ const ShipChandler: React.FC = () => {
         <div className="absolute inset-0 bg-black opacity-50 flex flex-col items-center justify-center text-center text-white p-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">Ship Chandler</h1>
           <p className="text-base md:text-xl">
-            Comprehensive supplies and provisions for your vessel's needs.
+            Comprehensive supplies and provisions for your vessels needs.
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@ const Mission: React.FC = () => {
         <p className="text-gray-300 text-lg leading-relaxed text-center">
           Our mission at Lucktang is to deliver high-quality design and
           technology solutions that empower businesses to achieve their goals.
-          We strive to exceed our clients' expectations through creativity,
+          We strive to exceed our clients expectations through creativity,
           innovation, and a commitment to excellence. We are dedicated to
           fostering a collaborative and inclusive environment where our team can
           thrive and contribute to the success of our clients.
