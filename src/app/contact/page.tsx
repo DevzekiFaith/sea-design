@@ -15,6 +15,25 @@ export default function Contact() {
       <div>
         <Header />
       </div>
+
+      {/* Hero Section */}
+      <div className="relative h-[50vh] md:h-[70vh] w-full">
+        <Image
+          src="/images/watermap.jpg"
+          alt="Contact Us"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+        />
+        <div className="absolute inset-0 bg-black opacity-50 flex flex-col items-center justify-center text-center text-white p-4 pt-[6rem] ">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">hello Dear!</h1>
+          <p className="text-lg md:text-xl">
+            Get in touch with us for inquiries, appointments, and support.
+          </p>
+        </div>
+      </div>
+
+      {/* Main Content */}
       <div className="container mx-auto p-8 pt-[6rem]">
         <div>
           <h2 className="text-3xl font-extrabold mt-6 text-center text-balance mb-6 text-blue-600 transform transition-transform duration-500 hover:translate-y-6">

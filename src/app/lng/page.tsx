@@ -7,13 +7,39 @@ const LNG: React.FC = () => {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       <Header />
-      <div className="container mx-auto p-8 pt-[8rem]">
+
+      {/* Hero Section */}
+      <div className="relative h-[50vh] md:h-[70vh] w-full">
+        <Image
+          src="/images/lng-hero.jpg"
+          alt="LNG Services"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+        />
+        <div
+          className="absolute inset-0 bg-black bg-opacity-50 flex flex-col 
+          items-center 
+        justify-center text-center text-white p-4 pt-[5.8rem]"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">LNG Services</h1>
+          <p className="text-lg md:text-xl">
+            Delivering innovative and reliable Liquefied Natural Gas solutions.
+          </p>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto p-8 pt-[6rem]">
         <h1 className="text-4xl font-bold text-center mb-8 text-blue-500">
           LNG Services
         </h1>
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/2 flex flex-col gap-8">
-            <div className="relative h-80 w-full">
+            <div
+              className="relative h-80 w-full transform 
+            transition-transform duration-500 hover:scale-105"
+            >
               <Image
                 src="/images/lng3.jpeg"
                 alt="LNG Service 1"
@@ -22,7 +48,11 @@ const LNG: React.FC = () => {
                 className="rounded-lg"
               />
             </div>
-            <div className="relative h-80 w-full">
+            <div
+              className="relative h-80 w-full transform 
+              transition-transform 
+            duration-500 hover:scale-105"
+            >
               <Image
                 src="/images/lng2.jpg"
                 alt="LNG Service 2"
@@ -31,7 +61,10 @@ const LNG: React.FC = () => {
                 className="rounded-lg"
               />
             </div>
-            <div className="relative h-80 w-full">
+            <div
+              className="relative h-80 w-full transform 
+            transition-transform duration-500 hover:scale-105"
+            >
               <Image
                 src="/images/lng4.jpg"
                 alt="LNG Service 3"
@@ -48,7 +81,7 @@ const LNG: React.FC = () => {
               facilities and experienced team ensure efficient and reliable LNG
               operations.
             </p>
-            <p className="text-lg mb-6">Our LNG services include</p>
+            <p className="text-lg mb-6">Our LNG services include:</p>
             <ul className="list-disc list-inside text-lg mb-6">
               <li>LNG Processing</li>
               <li>LNG Storage</li>
@@ -57,18 +90,11 @@ const LNG: React.FC = () => {
               <li>LNG Regasification</li>
             </ul>
             <p className="text-lg mb-6">
-              Lucktang Intl Limited has a rich history in the LNG business.
-              Over the years, we have built a reputation for excellence and
+              Lucktang Intl Limited has a rich history in the LNG business. Over
+              the years, we have built a reputation for excellence and
               reliability in the industry. Our commitment to innovation and
               customer satisfaction has driven our success and growth in the LNG
               sector.
-            </p>
-            <p className="text-lg mb-6">
-              We have successfully completed numerous LNG projects, delivering
-              high-quality services to clients worldwide. Our team of experts
-              works closely with clients to understand their specific needs and
-              provide customized solutions that meet the highest industry
-              standards.
             </p>
             <p className="text-lg mb-6">
               At Lucktang, we prioritize safety, efficiency, and environmental

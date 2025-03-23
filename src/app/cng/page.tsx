@@ -7,7 +7,29 @@ const CNG: React.FC = () => {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       <Header />
-      <div className="container mx-auto p-8 pt-[8rem]">
+
+      {/* Hero Section */}
+      <div className="relative h-[50vh] md:h-[70vh] w-full">
+        <Image
+          src="/images/s8.webp"
+          alt="CNG Services"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+        />
+        <div
+          className="absolute inset-0 bg-black opacity-80 flex flex-col 
+        items-center justify-center text-center text-white p-4 pt-[6.5rem]"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">CNG Services</h1>
+          <p className="text-lg md:text-xl">
+            Delivering reliable and efficient Compressed Natural Gas solutions.
+          </p>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto p-8 pt-[6rem]">
         <h1 className="text-4xl font-bold text-center mb-8 text-blue-500">
           CNG Services
         </h1>
@@ -42,13 +64,13 @@ const CNG: React.FC = () => {
             </div>
           </div>
           <div className="md:w-1/2 flex flex-col justify-center gap-5">
-            <p className="text-lg mb-6">
+            <p className="text-lg mb-6 mt-[5rem]">
               At Lucktang Intl Limited, we are dedicated to providing top-tier
               CNG (Compressed Natural Gas) services. Our state-of-the-art
               facilities and experienced team ensure efficient and reliable CNG
-              operations.
+              operations.-PM
             </p>
-            <p className="text-lg mb-6">Our CNG services include</p>
+            <p className="text-lg mb-6">Our CNG services include:</p>
             <ul className="list-disc list-inside text-lg mb-6">
               <li>CNG Processing</li>
               <li>CNG Storage</li>
@@ -57,30 +79,17 @@ const CNG: React.FC = () => {
               <li>CNG Compression</li>
             </ul>
             <p className="text-lg mb-6">
-              Lucktang Intl Limited has a rich history in the CNG business.
-              Over the years, we have built a reputation for excellence and
+              Lucktang Intl Limited has a rich history in the CNG business. Over
+              the years, we have built a reputation for excellence and
               reliability in the industry. Our commitment to innovation and
               customer satisfaction has driven our success and growth in the CNG
               sector.
-            </p>
-            <p className="text-lg mb-6">
-              We have successfully completed numerous CNG projects, delivering
-              high-quality services to clients worldwide. Our team of experts
-              works closely with clients to understand their specific needs and
-              provide customized solutions that meet the highest industry
-              standards.
             </p>
             <p className="text-lg mb-6">
               At Lucktang, we prioritize safety, efficiency, and environmental
               sustainability in all our CNG operations. We continuously invest
               in advanced technology and training to ensure our team is equipped
               to handle the complexities of the CNG industry.
-            </p>
-            <p className="text-lg mb-6">
-              Our satisfied clients are a testament to our dedication and
-              expertise in the CNG business. We are proud to be a trusted
-              partner in the CNG industry, delivering exceptional results on
-              every project.
             </p>
           </div>
         </div>

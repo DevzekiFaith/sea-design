@@ -9,10 +9,32 @@ const AboutPage: React.FC = () => {
   return (
     <div>
       <Header />
+
+      {/* Hero Section */}
+      <div className="relative h-[50vh] md:h-[70vh] w-full">
+        <Image
+          src="/images/s5.jpg"
+          alt="About Lucktang"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+        />
+        <div className="absolute inset-0 bg-black opacity-80 flex flex-col items-center justify-center text-center text-white p-4 pt-[8rem]">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            About Lucktang
+          </h1>
+          <p className="text-lg md:text-xl">
+            Delivering innovative marine solutions and exceptional services
+            globally.
+          </p>
+        </div>
+      </div>
+
+      {/* Main Content */}
       <div className="container mx-auto p-4 md:p-8">
-        <h1 className="text-4xl font-bold text-center mb-8 text-blue-600 pt-[6rem]">
+        {/* <h1 className="text-4xl font-bold text-center mb-8 text-blue-600 pt-8">
           About Lucktang
-        </h1>
+        </h1> */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div className="p-4 md:p-8 rounded-2xl shadow-lg transform transition-transform duration-500 hover:translate-y-4 hover:scale-105 hover:shadow-2xl">
             <Image
@@ -79,8 +101,8 @@ const AboutPage: React.FC = () => {
                 </strong>{" "}
                 <br />{" "}
                 <span className="text-blue-400">
-                  We prioritize our clients needs and work closely with
-                  them to achieve their vision.
+                  We prioritize our clients needs and work closely with them to
+                  achieve their vision.
                 </span>
               </li>
             </ul>

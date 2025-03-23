@@ -2,18 +2,21 @@ import React from "react";
 
 const Mission: React.FC = () => {
   return (
-    <div className="container mx-auto p-8 flex flex-col items-center">
-      <h2 className="text-4xl font-bold mb-6 text-center text-blue-600">
-        Our Mission
-      </h2>
-      <div className="bg-black p-8 rounded-2xl shadow-lg max-w-3xl">
-        <p className="text-lg text-gray-700 text-center">
-          <span className="text-white">LIMSCO&apos;s mission</span> is to
-          continuously evolve and exceed client expectations by understanding
-          and fulfilling their specific needs and requirements. We are dedicated
-          to delivering not just products and services, but also a deep
-          understanding of our clients&apos; operations, ensuring that they receive
-          tailored solutions that truly make a difference.
+    <div className="bg-black min-h-screen flex items-center justify-center">
+      <div
+        className="bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl 
+        transition-transform duration-500 transform hover:scale-105 hover:translate-y-[-10px] max-w-3xl w-full"
+      >
+        <h2 className="text-3xl font-bold mb-4 text-blue-400 text-center">
+          Our Mission
+        </h2>
+        <p className="text-gray-300 text-lg leading-relaxed text-center">
+          Our mission at Lucktang is to deliver high-quality design and
+          technology solutions that empower businesses to achieve their goals.
+          We strive to exceed our clients' expectations through creativity,
+          innovation, and a commitment to excellence. We are dedicated to
+          fostering a collaborative and inclusive environment where our team can
+          thrive and contribute to the success of our clients.
         </p>
       </div>
     </div>

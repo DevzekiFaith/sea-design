@@ -19,8 +19,8 @@ const History: React.FC = () => {
             />
           </div>
           <div className="md:w-1/2 w-full transform transition-transform duration-500 hover:scale-x-105">
-            <div className="w-full md:w-[600px] p-8">
-              <p className="text-lg mb-6 text-white text-center md:text-left">
+            <div className="w-full md:w-[600px] p-4 md:p-8">
+              <p className="text-base md:text-lg mb-6 text-white text-justify">
                 LIMSCO was established with a clear vision: to provide top-tier
                 maritime services and products that meet the highest industry
                 standards. From our humble beginnings as a local ship chandling
@@ -31,7 +31,7 @@ const History: React.FC = () => {
                 needs of each client and delivering customized solutions that
                 ensure their success.
               </p>
-              <p className="text-lg mb-6 text-white text-center md:text-left">
+              <p className="text-base md:text-lg mb-6 text-white text-justify">
                 Today, LIMSCO operates and has trusted associates in key
                 maritime hubs across the globe, including North Europe, Denmark,
                 Germany, Holland, Cyprus, Singapore, Greece, Norway, Korea,

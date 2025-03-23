@@ -67,47 +67,63 @@ const services = [
 
 const ShipPortOperationAgent: React.FC = () => {
   return (
-    <div className="container mx-auto p-4">
-      <div className="xl:w-[600px] text-center mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Freight, Logistics and Shipping
-          Management
-        </h1>
+    <div>
+      {/* Hero Section */}
+      <div className="relative h-[50vh] md:h-[70vh] w-full">
+        <Image
+          src="/images/s1.jpg"
+          alt="Freight, Logistics and Shipping Management"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+        />
+        <div className="absolute inset-0 bg-black opacity-50 flex flex-col items-center justify-center text-center text-white p-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Freight, Logistics and Shipping Management
+          </h1>
+          <p className="text-lg md:text-xl">
+            Comprehensive solutions for efficient and reliable maritime operations.
+          </p>
+        </div>
       </div>
-      <div className="xl:w-[600px] text-center mx-auto">
-        <p className="text-lg mb-6">
-          We offer expert ship/port operation agent services along with freight,
-          logistics, and shipping management solutions. Our team is committed to
-          providing efficient and reliable services to ensure the smooth
-          operation of your maritime activities.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="flex flex-col md:flex-row items-center bg-[#020403] p-6 rounded-lg shadow-lg"
-          >
-            <div className="md:w-1/3 mb-4 md:mb-0 md:mr-4">
-              <Image
-                src={service.image}
-                alt={service.title}
-                width={600}
-                height={600}
-                className="rounded-lg"
-              />
+
+      {/* Main Content */}
+      <div className="container mx-auto p-4">
+        <div className="xl:w-[600px] text-center mx-auto">
+          <p className="text-lg mb-6">
+            We offer expert ship/port operation agent services along with freight,
+            logistics, and shipping management solutions. Our team is committed to
+            providing efficient and reliable services to ensure the smooth
+            operation of your maritime activities.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="flex flex-col md:flex-row items-center bg-[#020403] p-6 rounded-lg shadow-lg transform transition-transform duration-500 hover:translate-y-2"
+            >
+              <div className="md:w-1/3 mb-4 md:mb-0 md:mr-4">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  width={600}
+                  height={600}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="md:w-2/3 text-white">
+                <h2 className="text-2xl font-semibold mb-2">{service.title}</h2>
+                <p className="text-lg">{service.description}</p>
+              </div>
             </div>
-            <div className="md:w-2/3 text-white">
-              <h2 className="text-2xl font-semibold mb-2">{service.title}</h2>
-              <p className="text-lg">{service.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-8 text-center">
-        <Link href="/services" className="text-blue-500 hover:underline">
-          Back to Services
-        </Link>
+          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <Link href="/services" className="text-blue-500 hover:underline">
+            Back to Services
+          </Link>
+        </div>
       </div>
     </div>
   );
