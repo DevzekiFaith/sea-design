@@ -5,7 +5,8 @@ const Mission: React.FC = () => {
     <div className="bg-black min-h-screen flex items-center justify-center">
       <div
         className="bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl 
-        transition-transform duration-500 transform hover:scale-105 hover:translate-y-[-10px] max-w-3xl w-full"
+        transition-transform duration-500 transform hover:scale-105 
+        hover:translate-y-[-10px] max-w-3xl w-full"
       >
         <h2 className="text-3xl font-bold mb-4 text-blue-400 text-center">
           Our Mission

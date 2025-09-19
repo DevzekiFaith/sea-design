@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from '@/lib/motion';
 
 const slides = [
   {
@@ -54,60 +55,148 @@ const HeroPage: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 6000); // Change slide every 6 seconds
     return () => clearInterval(interval);
   }, []);
 
+  // Animation variants
+  const slideVariants = {
+    enter: {
+      x: 1000,
+      opacity: 0
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: {
+      zIndex: 0,
+      x: -1000,
+      opacity: 0
+    }
+  };
+
+  const contentVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.9
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1
+    }
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0
+    }
+  };
+
   return (
-    <section className="relative h-screen mt-[6rem]">
+    <section className="relative h-screen mt-[6rem] overflow-hidden">
       <div className="absolute inset-0">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 }
+            }}
+            className="absolute inset-0"
           >
             <Image
-              src={slide.src}
-              alt={slide.alt}
-              layout="fill"
-              objectFit="cover"
+              src={slides[currentIndex].src}
+              alt={slides[currentIndex].alt}
+              fill
+              style={{ objectFit: "cover" }}
               quality={100}
               className="z-0"
+              priority
             />
-            <div className="absolute inset-0 bg-black opacity-60 flex items-center justify-center">
-              <div className="text-center text-white p-8 transform transition-transform duration-500 hover:scale-105">
-                <h1 className="text-5xl font-bold mb-4 mt-8">{slide.title}</h1>
-                <p className="text-lg mb-4">{slide.description}</p>
-                {slide.statement && (
-                  <h3 className="text-2xl font-semibold mb-2">
-                    {slide.statement}
-                  </h3>
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/70 to-cyan-900/80 flex items-center justify-center">
+              <motion.div 
+                className="text-center text-white p-8 max-w-4xl mx-auto"
+                variants={contentVariants}
+                initial="hidden"
+                animate="visible"
+                key={currentIndex}
+              >
+                <motion.h1 
+                  className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 display-font"
+                  variants={textVariants}
+                >
+                  {slides[currentIndex].title}
+                </motion.h1>
+                <motion.p 
+                  className="text-lg md:text-xl mb-6 text-blue-100 max-w-3xl mx-auto leading-relaxed"
+                  variants={textVariants}
+                >
+                  {slides[currentIndex].description}
+                </motion.p>
+                {slides[currentIndex].statement && (
+                  <motion.h3 
+                    className="text-2xl md:text-3xl font-semibold mb-4 text-cyan-300"
+                    variants={textVariants}
+                  >
+                    {slides[currentIndex].statement}
+                  </motion.h3>
                 )}
-                {slide.quote && <p className="italic mb-4">{slide.quote}</p>}
-                <Link href="/ceostatement" legacyBehavior>
-                  <button className="bg-blue-800 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer">
-                    Read CEOs Statement
-                  </button>
-                </Link>
-              </div>
+                {slides[currentIndex].quote && (
+                  <motion.p 
+                    className="text-lg md:text-xl italic mb-8 text-blue-200 max-w-2xl mx-auto"
+                    variants={textVariants}
+                  >
+                    &ldquo;{slides[currentIndex].quote}&rdquo;
+                  </motion.p>
+                )}
+                <motion.div variants={textVariants}>
+                  <Link href="/ceostatement" legacyBehavior>
+                    <motion.button 
+                      className="btn btn-primary text-lg px-8 py-4 font-semibold"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Read CEO&apos;s Statement
+                    </motion.button>
+                  </Link>
+                </motion.div>
+              </motion.div>
             </div>
-          </div>
-        ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      
+      {/* Enhanced Navigation Dots */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
         {slides.map((_, index) => (
-          <button
+          <motion.button
             key={index}
             title={`Slide ${index + 1}`}
-            className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? "bg-white" : "bg-gray-400"
+            className={`w-4 h-4 rounded-full transition-all duration-300 ${
+              index === currentIndex 
+                ? "bg-white shadow-lg scale-125" 
+                : "bg-white/50 hover:bg-white/75"
             }`}
             onClick={() => setCurrentIndex(index)}
-          ></button>
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          />
         ))}
       </div>
+
+      {/* Floating Elements */}
+      <div className="absolute top-20 right-20 w-20 h-20 glassmorphic rounded-full floating opacity-60" />
+      <div className="absolute bottom-20 left-20 w-16 h-16 glassmorphic-ocean rounded-full wave opacity-40" />
     </section>
   );
 };

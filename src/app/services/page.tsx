@@ -1,8 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Header from "@/component/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import dynamic from "next/dynamic";
+
+const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
+const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
 import HeroPage from "@/component/Video-HeroPage/Video-HeroPage";
 
 const services = [

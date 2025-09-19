@@ -2,8 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
-import Footer from "@/components/Footer/Footer";
-import Header from "@/component/Header/Header";
+import dynamic from "next/dynamic";
+
+const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
+const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
 
 const AboutPage: React.FC = () => {
   return (

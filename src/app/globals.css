@@ -1,24 +1,446 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+  --font-display: var(--font-playfair);
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Maritime Blue Color Palette */
+  --maritime-primary: #1e3a8a;
+  --maritime-primary-dark: #1e40af;
+  --maritime-primary-light: #3b82f6;
+  --maritime-secondary: #0ea5e9;
+  --maritime-accent: #06b6d4;
+  --maritime-deep: #0c4a6e;
+  --maritime-ocean: #0284c7;
+  
+  /* Neutral Colors */
+  --background: #f8fafc;
+  --background-dark: #0f172a;
+  --foreground: #1e293b;
+  --foreground-light: #64748b;
+  --white: #ffffff;
+  --white-soft: rgba(255, 255, 255, 0.95);
+  
+  /* Glassmorphism Colors */
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-bg-dark: rgba(15, 23, 42, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  
+  /* Neumorphism Colors */
+  --neu-bg: #f1f5f9;
+  --neu-bg-dark: #1e293b;
+  --neu-shadow-light: rgba(255, 255, 255, 0.7);
+  --neu-shadow-dark: rgba(0, 0, 0, 0.15);
+  --neu-shadow-dark-light: rgba(255, 255, 255, 0.1);
+  --neu-shadow-dark-dark: rgba(0, 0, 0, 0.3);
+  
+  /* Gradients */
+  --gradient-maritime: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+  --gradient-ocean: linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #0ea5e9 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--background-dark);
+    --foreground: #f1f5f9;
+    --glass-bg: var(--glass-bg-dark);
+    --glass-border: var(--glass-border-dark);
+    --neu-bg: var(--neu-bg-dark);
+    --neu-shadow-light: var(--neu-shadow-dark-light);
+    --neu-shadow-dark: var(--neu-shadow-dark-dark);
   }
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.display-font {
+  font-family: var(--font-playfair), serif;
+}
+
+/* Maritime Background Patterns */
+.maritime-bg {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+}
+
+.maritime-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Enhanced Glassmorphic Styles */
+.glassmorphic {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 
+    0 8px 32px 0 rgba(30, 58, 138, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glassmorphic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-glass);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glassmorphic:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 20px 40px 0 rgba(30, 58, 138, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.glassmorphic:hover::before {
+  opacity: 1;
+}
+
+/* Enhanced Neumorphic Styles */
+.neumorphic {
+  background: var(--neu-bg);
+  border-radius: 24px;
+  box-shadow: 
+    12px 12px 24px var(--neu-shadow-dark),
+    -12px -12px 24px var(--neu-shadow-light);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.neumorphic:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    16px 16px 32px var(--neu-shadow-dark),
+    -16px -16px 32px var(--neu-shadow-light);
+}
+
+.neumorphic-pressed {
+  box-shadow: 
+    inset 6px 6px 12px var(--neu-shadow-dark),
+    inset -6px -6px 12px var(--neu-shadow-light);
+  transform: scale(0.98);
+}
+
+/* Maritime Glassmorphic Variants */
+.glassmorphic-maritime {
+  background: rgba(30, 58, 138, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 24px;
+  box-shadow: 
+    0 8px 32px 0 rgba(30, 58, 138, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glassmorphic-ocean {
+  background: rgba(6, 182, 212, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 24px;
+  box-shadow: 
+    0 8px 32px 0 rgba(6, 182, 212, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Neumorphic Card Styles */
+.card {
+  @apply p-6 rounded-3xl transition-all duration-300;
+  background: var(--neu-bg);
+  box-shadow: 
+    12px 12px 24px var(--neu-shadow-dark),
+    -12px -12px 24px var(--neu-shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    16px 16px 32px var(--neu-shadow-dark),
+    -16px -16px 32px var(--neu-shadow-light);
+}
+
+.card-title {
+  @apply text-xl font-bold mb-3;
+  color: #1a1a1a;
+  font-family: var(--font-poppins);
+}
+
+.card-content {
+  @apply text-base leading-relaxed;
+  color: #2d2d2d;
+  font-family: var(--font-inter);
+}
+
+/* Neumorphic Card Variants */
+.card-neu-inset {
+  background: var(--neu-bg);
+  box-shadow: 
+    inset 6px 6px 12px var(--neu-shadow-dark),
+    inset -6px -6px 12px var(--neu-shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-neu-flat {
+  background: var(--neu-bg);
+  box-shadow: 
+    4px 4px 8px var(--neu-shadow-dark),
+    -4px -4px 8px var(--neu-shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-neu-convex {
+  background: var(--neu-bg);
+  box-shadow: 
+    8px 8px 16px var(--neu-shadow-dark),
+    -8px -8px 16px var(--neu-shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-neu-concave {
+  background: var(--neu-bg);
+  box-shadow: 
+    inset 8px 8px 16px var(--neu-shadow-dark),
+    inset -8px -8px 16px var(--neu-shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Maritime Button Styles */
+.btn {
+  @apply px-8 py-4 rounded-2xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 relative overflow-hidden;
+  font-family: var(--font-poppins);
+  position: relative;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: var(--gradient-maritime);
+  color: white;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 
+    0 4px 15px rgba(30, 58, 138, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(30, 58, 138, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+  background: var(--gradient-ocean);
+  color: white;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  box-shadow: 
+    0 4px 15px rgba(6, 182, 212, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(6, 182, 212, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--maritime-primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Maritime Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0px) rotate(0deg); }
+  50% { transform: translateX(10px) rotate(1deg); }
+}
+
+@keyframes maritimeGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+}
+
+@keyframes oceanFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.wave {
+  animation: wave 4s ease-in-out infinite;
+}
+
+.maritime-glow {
+  animation: maritimeGlow 3s ease-in-out infinite;
+}
+
+.ocean-flow {
+  background: linear-gradient(-45deg, #1e3a8a, #3b82f6, #06b6d4, #0ea5e9);
+  background-size: 400% 400%;
+  animation: oceanFlow 8s ease infinite;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    @apply p-4;
+  }
+  
+  .card-title {
+    @apply text-lg;
+  }
 }
