@@ -35,13 +35,13 @@ const LNG: React.FC = () => {
 
       {/* Main Content */}
       <div className="container mx-auto p-8">
-        <div className="card p-8 mb-8">
-          <h1 className="text-4xl font-bold text-center mb-8 card-title">
+        <div className="card p-8 mb-8" style={{ backgroundColor: '#1e3a8a', color: 'white' }}>
+          <h1 className="text-4xl font-bold text-center mb-8" style={{ color: 'white' }}>
             LNG Services
           </h1>
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/2 flex flex-col gap-8">
-              <div className="card p-4">
+              <div className="card p-4" style={{ backgroundColor: '#1e40af' }}>
                 <div className="relative h-80 w-full transform transition-transform duration-500 hover:scale-105">
                   <Image
                     src="/images/lng3.jpeg"
@@ -52,7 +52,7 @@ const LNG: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="card p-4">
+              <div className="card p-4" style={{ backgroundColor: '#1e40af' }}>
                 <div className="relative h-80 w-full transform transition-transform duration-500 hover:scale-105">
                   <Image
                     src="/images/lng2.jpg"
@@ -63,7 +63,7 @@ const LNG: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="card p-4">
+              <div className="card p-4" style={{ backgroundColor: '#1e40af' }}>
                 <div className="relative h-80 w-full transform transition-transform duration-500 hover:scale-105">
                   <Image
                     src="/images/lng4.jpg"
@@ -76,8 +76,8 @@ const LNG: React.FC = () => {
               </div>
             </div>
             <div className="md:w-1/2 flex flex-col justify-center">
-              <div className="card p-6 mb-6">
-                <p className="card-content">
+              <div className="card p-6 mb-6" style={{ backgroundColor: '#1e40af', color: 'white' }}>
+                <p style={{ color: 'white' }}>
                   At Lucktang Intl Limited, we are dedicated to providing top-tier
                   LNG (Liquefied Natural Gas) services. Our state-of-the-art
                   facilities and experienced team ensure efficient and reliable LNG
@@ -85,9 +85,9 @@ const LNG: React.FC = () => {
                 </p>
               </div>
               
-              <div className="card p-6 mb-6">
-                <h3 className="card-title mb-4">Our LNG services include:</h3>
-                <ul className="list-disc list-inside card-content space-y-2">
+              <div className="card p-6 mb-6" style={{ backgroundColor: '#1e40af', color: 'white' }}>
+                <h3 className="mb-4" style={{ color: 'white', fontSize: '1.25rem', fontWeight: 'bold' }}>Our LNG services include:</h3>
+                <ul className="list-disc list-inside space-y-2" style={{ color: 'white' }}>
                   <li>LNG Processing</li>
                   <li>LNG Storage</li>
                   <li>LNG Transportation</li>
@@ -96,8 +96,8 @@ const LNG: React.FC = () => {
                 </ul>
               </div>
               
-              <div className="card p-6 mb-6">
-                <p className="card-content">
+              <div className="card p-6 mb-6" style={{ backgroundColor: '#1e40af', color: 'white' }}>
+                <p style={{ color: 'white' }}>
                   Lucktang Intl Limited has a rich history in the LNG business. Over
                   the years, we have built a reputation for excellence and
                   reliability in the industry. Our commitment to innovation and
@@ -106,8 +106,8 @@ const LNG: React.FC = () => {
                 </p>
               </div>
               
-              <div className="card p-6 mb-6">
-                <p className="card-content">
+              <div className="card p-6 mb-6" style={{ backgroundColor: '#1e40af', color: 'white' }}>
+                <p style={{ color: 'white' }}>
                   At Lucktang, we prioritize safety, efficiency, and environmental
                   sustainability in all our LNG operations. We continuously invest
                   in advanced technology and training to ensure our team is equipped
@@ -115,8 +115,8 @@ const LNG: React.FC = () => {
                 </p>
               </div>
               
-              <div className="card p-6">
-                <p className="card-content">
+              <div className="card p-6" style={{ backgroundColor: '#1e40af', color: 'white' }}>
+                <p style={{ color: 'white' }}>
                   Our satisfied clients are a testament to our dedication and
                   expertise in the LNG business. We are proud to be a trusted
                   partner in the LNG industry, delivering exceptional results on
