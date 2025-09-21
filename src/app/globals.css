@@ -67,7 +67,7 @@ html {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: white;
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   transition: all 0.3s ease;
@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Enhanced Neumorphic Styles */
 .neumorphic {
-  background: var(--neu-bg);
+  background: white;
   border-radius: 24px;
   box-shadow: 
     12px 12px 24px var(--neu-shadow-dark),
@@ -155,6 +155,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
+  color: #1a1a1a;
 }
 
 .neumorphic:hover {
@@ -197,12 +198,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Enhanced Neumorphic Card Styles */
 .card {
   @apply p-6 rounded-3xl transition-all duration-300;
-  background: var(--neu-bg);
+  background: white;
   box-shadow: 
     12px 12px 24px var(--neu-shadow-dark),
     -12px -12px 24px var(--neu-shadow-light);
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
+  color: #1a1a1a;
 }
 
 .card:hover {
@@ -220,41 +222,45 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-content {
   @apply text-base leading-relaxed;
-  color: #2d2d2d;
+  color: #1a1a1a;
   font-family: var(--font-inter);
 }
 
 /* Neumorphic Card Variants */
 .card-neu-inset {
-  background: var(--neu-bg);
+  background: white;
   box-shadow: 
     inset 6px 6px 12px var(--neu-shadow-dark),
     inset -6px -6px 12px var(--neu-shadow-light);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #1a1a1a;
 }
 
 .card-neu-flat {
-  background: var(--neu-bg);
+  background: white;
   box-shadow: 
     4px 4px 8px var(--neu-shadow-dark),
     -4px -4px 8px var(--neu-shadow-light);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #1a1a1a;
 }
 
 .card-neu-convex {
-  background: var(--neu-bg);
+  background: white;
   box-shadow: 
     8px 8px 16px var(--neu-shadow-dark),
     -8px -8px 16px var(--neu-shadow-light);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #1a1a1a;
 }
 
 .card-neu-concave {
-  background: var(--neu-bg);
+  background: white;
   box-shadow: 
     inset 8px 8px 16px var(--neu-shadow-dark),
     inset -8px -8px 16px var(--neu-shadow-light);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #1a1a1a;
 }
 
 /* Maritime Button Styles */

@@ -11,7 +11,6 @@ import {
   FaMapMarkerAlt,
   FaWhatsapp,
   FaShip,
-  FaAnchor,
 } from "react-icons/fa";
 
 const Footer: React.FC = () => {
@@ -91,11 +90,9 @@ const Footer: React.FC = () => {
                   Lucktang International Limited
                 </motion.h2>
                 <div className="flex items-center justify-center space-x-2">
-                  <FaAnchor className="text-blue-400" />
                   <span className="text-sm font-semibold tracking-wider text-blue-300">
-                    MARITIME EXCELLENCE
+                    ENERGY SOLUTIONS
                   </span>
-                  <FaAnchor className="text-blue-400" />
                 </div>
         </div>
               
@@ -103,8 +100,8 @@ const Footer: React.FC = () => {
                 className="text-blue-100 leading-relaxed max-w-md mx-auto"
                 whileHover={{ scale: 1.02 }}
               >
-            Revolutionizing the Marine space with cutting-edge solutions for
-                modern Water Works and maritime operations.
+                Providing innovative energy solutions with cutting-edge technology for
+                modern LNG and CNG operations.
               </motion.p>
 
               <div className="space-y-3">
@@ -179,7 +176,7 @@ const Footer: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <p className="text-sm text-blue-200">
-                  Follow us for the latest maritime industry updates and company news.
+                  Follow us for the latest energy industry updates and company news.
                 </p>
               </motion.div>
             </motion.div>
@@ -194,7 +191,7 @@ const Footer: React.FC = () => {
               &copy; {new Date().getFullYear()} Lucktang International Limited. All rights reserved.
             </p>
             <p className="text-sm text-blue-400 mt-2">
-              Navigating Excellence in Maritime Solutions
+              Delivering Excellence in Energy Solutions
             </p>
           </motion.div>
               </div>

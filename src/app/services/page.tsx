@@ -7,101 +7,173 @@ import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
-import HeroPage from "@/component/Video-HeroPage/Video-HeroPage";
 
 const services = [
   {
     id: 1,
-    title: "Marine and Shipping Management",
-    description:
-      "We provide comprehensive marine and shipping management services to ensure smooth and efficient operations.",
-    route: "/services/marine-shipping-management",
-    image: "/images/ms8.jpg",
-  },
-  {
-    id: 2,
-    title: "Ship Chandler",
-    description:
-      "Our ship chandler services offer a wide range of supplies and provisions to meet the needs of your vessel.",
-    route: "/services/ship-chandler",
-    image: "/images/ms2.jpg",
-  },
-  {
-    id: 3,
-    title: "Freight, Logistics and Shipping Management",
-    description:
-      "We offer expert ship/port operation agent services along with freight, logistics, and shipping management solutions.",
-    route: "/services/freight-agent",
-    image: "/images/ms3.jpg",
-  },
-  {
-    id: 4,
-    title: "Ship / Port Operation Agents",
-    description:
-      "Our Ship / Port Operation Agents services offer a wide range of supplies and provisions to meet the needs of your vessel.",
-    route: "/services/ship-port-operation-agent",
-    image: "/images/se2.jpg",
-  },
-  {
-    id: 5,
     title: "Dredging Services",
     description:
       "We offer comprehensive dredging services to meet the diverse needs of our clients, ensuring efficient and effective operations.",
     route: "/services/dredging",
     image: "/images/dreg2.jpg",
   },
-  {
-    id: 6,
-    title: "Subsea Divers and Topside Engineering",
-    description:
-      "We provide comprehensive subsea divers and topside engineering services to ensure efficient and effective operations.",
-    route: "/services/subseadivers",
-    image: "/images/div1.png",
-  },
 ];
 
 const ServicesPage: React.FC = () => {
   return (
-    <div>
+    <div className="bg-white min-h-screen">
       <Header />
-      <HeroPage />
-      <div className="container mx-auto p-4 pt-[8rem]">
-        <div
-          className="text-center text-blue-500 mt-[2rem] 
-        mb-[2rem] font-extrabold text-4xl uppercase p-4 rounded-lg"
-        >
-          Features
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="bg-[#020403] rounded-lg p-6 shadow-lg 
-              hover:shadow-xl transition-shadow 
-              duration-300 flex flex-col items-center"
-            >
-              <Image
-                src={service.image}
-                alt={service.title}
-                width={300}
-                height={200}
-                className="rounded-lg mb-4"
-              />
-              <h2 className="text-2xl font-semibold mb-4 text-center">
-                {service.title}
-              </h2>
-              <p className="mb-4 text-center">{service.description}</p>
-              <Link href={service.route} legacyBehavior>
-                <button className="bg-green-600 text-white 
-                px-6 py-3 rounded-full font-semibold
-                 hover:bg-green-700 transition duration-300 cursor-pointer">
-                  Learn More
-                </button>
-              </Link>
-            </div>
-          ))}
+
+      {/* Hero Section with Glassmorphism */}
+      <div className="relative h-[60vh] md:h-[80vh] w-full mt-20">
+        <Image
+          src="/images/dreg1.jpg"
+          alt="Dredging Services"
+          fill
+          style={{ objectFit: "cover" }}
+          className="z-0"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+          <div className="glassmorphic p-12 max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 display-font">Our Services</h1>
+            <p className="text-xl md:text-2xl leading-relaxed">
+              Professional dredging solutions for marine and inland water environments.
+            </p>
+          </div>
         </div>
       </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto p-8 -mt-20 relative z-10">
+        {/* Services Section */}
+        <div className="card p-12 mb-12">
+          <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">
+            Our Professional Services
+          </h2>
+          
+          <div className="flex justify-center">
+            <div className="max-w-2xl w-full">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  className="neumorphic p-8 transform transition-all duration-300 hover:scale-105"
+                >
+                  <div className="text-center">
+                    <div className="relative h-80 w-full mb-8 transform transition-transform duration-500 hover:scale-105">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className="rounded-lg"
+                      />
+                    </div>
+                    
+                    <h3 className="text-3xl font-bold mb-6 text-slate-800 card-title">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-lg leading-relaxed text-slate-700 mb-8">
+                      {service.description}
+                    </p>
+                    
+                    <div className="glassmorphic p-6 mb-8">
+                      <h4 className="text-xl font-semibold mb-4 text-slate-800">
+                        Why Choose Our Dredging Services?
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700">
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                          <span>State-of-the-art equipment</span>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                          <span>Experienced professionals</span>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                          <span>Environmental compliance</span>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                          <span>24/7 support</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <Link href={service.route}>
+                      <button className="btn btn-primary px-8 py-4 text-lg transform hover:scale-105 transition duration-300">
+                        Learn More About Dredging
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Information Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="card p-8">
+            <h3 className="text-2xl font-bold mb-6 text-slate-800 card-title">
+              Our Expertise
+            </h3>
+            <div className="space-y-4">
+              <div className="glassmorphic p-4 rounded-lg">
+                <h4 className="font-semibold text-slate-800 mb-2">Marine Dredging</h4>
+                <p className="text-slate-700 text-sm">Port and harbor maintenance, channel deepening, and coastal protection.</p>
+              </div>
+              <div className="glassmorphic p-4 rounded-lg">
+                <h4 className="font-semibold text-slate-800 mb-2">Environmental Dredging</h4>
+                <p className="text-slate-700 text-sm">Contaminated sediment removal and environmental restoration projects.</p>
+              </div>
+              <div className="glassmorphic p-4 rounded-lg">
+                <h4 className="font-semibold text-slate-800 mb-2">Land Reclamation</h4>
+                <p className="text-slate-700 text-sm">Creating new land areas for development and infrastructure projects.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="card p-8">
+            <h3 className="text-2xl font-bold mb-6 text-slate-800 card-title">
+              Why Choose Us
+            </h3>
+            <div className="neumorphic p-6">
+              <p className="text-slate-700 leading-relaxed mb-4">
+                With years of experience in the dredging industry, we have built a reputation for delivering high-quality services that meet the most demanding project requirements.
+              </p>
+              <p className="text-slate-700 leading-relaxed">
+                Our commitment to safety, environmental responsibility, and operational excellence ensures that every project is completed to the highest standards while minimizing environmental impact.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact CTA Card */}
+        <div className="card p-8 text-center">
+          <h3 className="text-3xl font-bold mb-6 text-slate-800 card-title">
+            Ready to Start Your Project?
+          </h3>
+          <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
+            Contact us today to discuss your dredging needs and get a customized solution that meets your specific requirements.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <button className="btn btn-primary px-8 py-4 text-lg transform hover:scale-105 transition duration-300">
+                Get a Quote
+              </button>
+            </Link>
+            <Link href="/about">
+              <button className="btn btn-secondary px-8 py-4 text-lg transform hover:scale-105 transition duration-300">
+                Learn More About Us
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      
       <Footer />
     </div>
   );

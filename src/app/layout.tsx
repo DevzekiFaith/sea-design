@@ -23,13 +23,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Lucktang International Limited - Maritime Excellence",
-  description: "Leading maritime solutions provider specializing in marine engineering, shipping services, and innovative water works solutions. Professional maritime services with cutting-edge technology.",
-  keywords: "maritime, shipping, marine engineering, water works, maritime services, Lucktang",
+  title: "Lucktang International Limited - Energy Solutions",
+  description: "Leading energy solutions provider specializing in LNG and CNG services. Professional energy services with cutting-edge technology.",
+  keywords: "LNG, CNG, energy solutions, natural gas, energy services, Lucktang",
   authors: [{ name: "Lucktang International Limited" }],
   openGraph: {
-    title: "Lucktang International Limited - Maritime Excellence",
-    description: "Leading maritime solutions provider with professional services and innovative technology.",
+    title: "Lucktang International Limited - Energy Solutions",
+    description: "Leading energy solutions provider with professional LNG and CNG services.",
     type: "website",
   },
 };

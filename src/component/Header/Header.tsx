@@ -80,7 +80,7 @@ const Header: React.FC = () => {
                 Lucktang
               </h1>
               <p className="text-xs text-slate-600 dark:text-slate-400 font-medium tracking-wider">
-                MARITIME EXCELLENCE
+                ENERGY SOLUTIONS
               </p>
             </Link>
           </motion.div>

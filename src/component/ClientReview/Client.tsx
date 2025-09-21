@@ -64,11 +64,11 @@ const ClientReview: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-8 flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-3xl font-bold text-center mb-10 text-blue-500">
+    <div className="container mx-auto p-8 flex flex-col items-center justify-center">
+      <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">
         Client Reviews
       </h2>
-      <div className="relative overflow-hidden w-full max-w-4xl rounded-2xl">
+      <div className="relative overflow-hidden w-full max-w-6xl rounded-2xl">
         <div
           className="flex transition-transform duration-500"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -76,38 +76,38 @@ const ClientReview: React.FC = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="min-w-full bg-[#040200] shadow-md p-8 transform 
-              transition-transform duration-300 hover:scale-105 hover:shadow-lg h-auto md:h-100 flex flex-col 
-              justify-center mb-[8rem] pt-[6rem]"
+              className="min-w-full card p-12 transform 
+              transition-transform duration-300 hover:scale-105 hover:shadow-lg h-auto flex flex-col 
+              justify-center min-h-[500px]"
             >
-              <div className="flex justify-center items-center mb-4 mt-6">
+              <div className="flex justify-center items-center mb-8">
                 <div className="flex items-center flex-col">
-                  <div className="">
+                  <div className="mb-6">
                     <Image
                       src={review.image}
                       alt={review.name}
-                      width={180}
-                      height={180}
+                      width={200}
+                      height={200}
                       className="rounded-full"
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold pt-4 pb-2 text-white">
+                    <h3 className="text-2xl font-semibold pt-4 pb-2 text-slate-800">
                       {review.name}
                     </h3>
                   </div>
                   <div>
-                    <h3 className="text-[14px] pb-2 text-white">
+                    <h3 className="text-lg pb-4 text-slate-600">
                       {review.position}
                     </h3>
                   </div>
                 </div>
               </div>
-              <div className="px-4 md:px-0">
-                <p className="text-gray-300 text-center">{review.comment}</p>
-                <div className="flex justify-center mt-4">
+              <div className="px-8 md:px-12">
+                <p className="text-slate-800 text-center text-lg leading-relaxed mb-6">{review.comment}</p>
+                <div className="flex justify-center mt-6">
                   {[...Array(review.rating)].map((_, i) => (
-                    <FaStar key={i} className="text-yellow-500" />
+                    <FaStar key={i} className="text-yellow-500 text-2xl mx-1" />
                   ))}
                 </div>
               </div>

@@ -2,20 +2,12 @@
 
 import dynamic from 'next/dynamic';
 import { motion } from '@/lib/motion';
+import Link from 'next/link';
 
 // Import client components with no SSR
 const Header = dynamic(() => import('@/component/Header/Header'), { ssr: false });
-const Mission = dynamic(() => import('@/component/Mission/Mission'), { ssr: false });
-const Vision = dynamic(() => import('@/component/Vision/Vision'), { ssr: false });
-const History = dynamic(() => import('@/component/CompanyHistory/History'), { ssr: false });
-const Company = dynamic(() => import('@/component/CompanyOverview/Company'), { ssr: false });
 const ClientReview = dynamic(() => import('@/component/ClientReview/Client'), { ssr: false });
-const HeroPage = dynamic(() => import('@/component/HeroPage/HeroPage'), { ssr: false });
-const Team = dynamic(() => import('@/component/Team/Team'), { ssr: false });
 const Footer = dynamic(() => import('@/components/Footer/Footer'), { ssr: false });
-const Partners = dynamic(() => import('@/component/Partners/Partners'), { ssr: false });
-const Gas = dynamic(() => import('@/component/Gas/Gas'), { ssr: false });
-const BackToTop = dynamic(() => import('@/components/BackToTop'), { ssr: false });
 
 // Animation variants
 const containerVariants = {
@@ -30,8 +22,8 @@ const containerVariants = {
 };
 
 const sectionVariants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 50,
     scale: 0.95
   },
@@ -44,84 +36,107 @@ const sectionVariants = {
 
 export default function ClientPage() {
   return (
-    <div className="min-h-screen bg-gray-100 text-slate-800 transition-colors duration-300">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse" />
-      </div>
-      
+    <div className="min-h-screen bg-white text-slate-800 transition-colors duration-300">
       <Header />
-      
-      <motion.main 
+
+      <motion.main
         className="container mx-auto px-4 sm:px-6 lg:px-8 py-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Hero Section with Neumorphic Card */}
-        <motion.section 
-          className="mb-16 card p-8"
+        {/* Hero Section */}
+        <motion.section
+          className="mb-16 text-center py-16"
           variants={sectionVariants}
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <HeroPage />
+          <h1 className="text-6xl font-bold mb-6 text-slate-800 display-font">
+            Welcome to Lucktang Intl Limited
+          </h1>
+          <p className="text-xl mb-8 text-slate-600 max-w-4xl mx-auto">
+            Your trusted partner in energy solutions and comprehensive business operations.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/services">
+              <motion.button 
+                className="btn btn-primary px-8 py-4 text-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Our Services
+              </motion.button>
+            </Link>
+            <Link href="/about">
+              <motion.button 
+                className="btn btn-secondary px-8 py-4 text-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                About Us
+              </motion.button>
+            </Link>
+          </div>
         </motion.section>
 
-        {/* Gas Section with Neumorphic Card */}
-        <motion.section 
-          className="mb-16 card p-8"
+        {/* Services Grid */}
+        <motion.section
+          className="mb-16"
           variants={sectionVariants}
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <Gas />
+          <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">Our Core Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* LNG Services Section */}
+            <motion.div
+              className="card p-8 text-center"
+              variants={sectionVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <h3 className="text-3xl font-bold mb-4 card-title">LNG Services</h3>
+              <p className="text-lg mb-6 card-content">
+                Delivering innovative and reliable Liquefied Natural Gas solutions for modern energy needs.
+              </p>
+              <Link href="/lng">
+                <motion.button 
+                  className="btn btn-primary"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More About LNG
+                </motion.button>
+              </Link>
+            </motion.div>
+
+            {/* CNG Services Section */}
+            <motion.div
+              className="card p-8 text-center"
+              variants={sectionVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <h3 className="text-3xl font-bold mb-4 card-title">CNG Services</h3>
+              <p className="text-lg mb-6 card-content">
+                Providing efficient and sustainable Compressed Natural Gas solutions for various applications.
+              </p>
+              <Link href="/cng">
+                <motion.button 
+                  className="btn btn-primary"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More About CNG
+                </motion.button>
+              </Link>
+            </motion.div>
+          </div>
         </motion.section>
 
-        {/* Vision Section with Neumorphic Card */}
-        <motion.section 
-          className="mb-16 card p-8"
-          variants={sectionVariants}
-          whileHover={{ scale: 1.01 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <Vision />
-        </motion.section>
-
-        {/* History Section with Neumorphic Card */}
-        <motion.section 
-          className="mb-16 card p-8"
-          variants={sectionVariants}
-          whileHover={{ scale: 1.01 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <History />
-        </motion.section>
-
-        {/* Company Section with Neumorphic Card */}
-        <motion.section 
-          className="mb-16 card p-8"
-          variants={sectionVariants}
-          whileHover={{ scale: 1.01 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <Company />
-        </motion.section>
-
-        {/* Mission Section with Neumorphic Card */}
-        <motion.section 
-          className="mb-16 card p-8"
-          variants={sectionVariants}
-          whileHover={{ scale: 1.01 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <Mission />
-        </motion.section>
-
-        {/* Client Reviews with Neumorphic Card */}
-        <motion.section 
+        {/* Client Reviews Section */}
+        <motion.section
           className="mb-16 card p-8"
           variants={sectionVariants}
           whileHover={{ scale: 1.01 }}
@@ -129,30 +144,9 @@ export default function ClientPage() {
         >
           <ClientReview />
         </motion.section>
-
-        {/* Partners Section with Neumorphic Card */}
-        <motion.section 
-          className="mb-16 card p-8"
-          variants={sectionVariants}
-          whileHover={{ scale: 1.01 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <Partners />
-        </motion.section>
-
-        {/* Team Section with Neumorphic Card */}
-        <motion.section 
-          className="mb-16 card p-8"
-          variants={sectionVariants}
-          whileHover={{ scale: 1.01 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <Team />
-        </motion.section>
       </motion.main>
-      
+
       <Footer />
-      <BackToTop />
     </div>
   );
 }

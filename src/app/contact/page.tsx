@@ -15,7 +15,7 @@ const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false 
 
 export default function Contact() {
   return (
-    <div>
+    <div className="bg-white min-h-screen">
       <div>
         <Header />
       </div>
@@ -123,90 +123,90 @@ export default function Contact() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-10 space-y-8 md:space-y-0 md:space-x-8">
-          <div className="p-8 rounded-2xl shadow-lg max-w-lg w-full">
-            <h3 className="text-2xl font-semibold mb-4 text-white transform transition-transform duration-500 hover:translate-x-6">
+          <div className="card p-8 max-w-lg w-full">
+            <h3 className="text-2xl font-semibold mb-4 text-slate-800 transform transition-transform duration-500 hover:translate-x-6">
               Schedule an Appointment
             </h3>
             <form className="space-y-4">
               <div>
-                <label className="block text-white mb-2" htmlFor="name">
+                <label className="block text-slate-800 mb-2 font-medium" htmlFor="name">
                   Name
                 </label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  className="w-full p-3 rounded-lg bg-white border-2 border-gray-200 text-slate-800 focus:border-blue-500 focus:outline-none transition-colors"
                   required
                 />
               </div>
               <div>
-                <label className="block text-white mb-2" htmlFor="email">
+                <label className="block text-slate-800 mb-2 font-medium" htmlFor="email">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  className="w-full p-3 rounded-lg bg-white border-2 border-gray-200 text-slate-800 focus:border-blue-500 focus:outline-none transition-colors"
                   required
                 />
               </div>
               <div>
-                <label className="block text-white mb-2" htmlFor="phone">
+                <label className="block text-slate-800 mb-2 font-medium" htmlFor="phone">
                   Phone Number
                 </label>
                 <input
                   type="tel"
                   id="phone"
-                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  className="w-full p-3 rounded-lg bg-white border-2 border-gray-200 text-slate-800 focus:border-blue-500 focus:outline-none transition-colors"
                   required
                 />
               </div>
               <div>
-                <label className="block text-white mb-2" htmlFor="address">
+                <label className="block text-slate-800 mb-2 font-medium" htmlFor="address">
                   Address
                 </label>
                 <input
                   type="text"
                   id="address"
-                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  className="w-full p-3 rounded-lg bg-white border-2 border-gray-200 text-slate-800 focus:border-blue-500 focus:outline-none transition-colors"
                   required
                 />
               </div>
               <div>
-                <label className="block text-white mb-2" htmlFor="description">
+                <label className="block text-slate-800 mb-2 font-medium" htmlFor="description">
                   Description for Appointment
                 </label>
                 <textarea
                   id="description"
-                  className="w-full p-2 rounded-lg bg-gray-700 text-white"
+                  className="w-full p-3 rounded-lg bg-white border-2 border-gray-200 text-slate-800 focus:border-blue-500 focus:outline-none transition-colors resize-vertical"
                   rows={4}
                   required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="bg-green-600 w-full text-white px-4 py-2 sm:px-6 sm:py-3 
+                className="bg-green-600 w-full text-white px-4 py-3 sm:px-6 sm:py-3 
                 rounded-full font-semibold text-sm sm:text-base 
-                hover:bg-green-700 transition duration-300"
+                hover:bg-green-700 transition duration-300 transform hover:scale-105"
               >
                 Submit Now
               </button>
             </form>
           </div>
-          <div className="p-8 rounded-2xl shadow-lg max-w-lg w-full">
-            <h3 className="text-2xl font-semibold mb-4 text-white transform transition-transform duration-500 hover:translate-x-6">
+          <div className="card p-8 max-w-lg w-full">
+            <h3 className="text-2xl font-semibold mb-4 text-slate-800 transform transition-transform duration-500 hover:translate-x-6">
               Book an Appointment
             </h3>
-            <p className="text-white mb-4">
+            <p className="text-slate-700 mb-6 leading-relaxed">
               You can also book an appointment directly using Calendly or Google
-              Calendar.
+              Calendar for your convenience.
             </p>
-            <div className="flex justify-center space-x-4 gap-5">
+            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 gap-5">
               <a
                 href="https://calendly.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300"
+                className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300 transform hover:scale-105 text-center"
               >
                 Book with Calendly
               </a>
@@ -214,7 +214,7 @@ export default function Contact() {
                 href="https://calendar.google.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition duration-300"
+                className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-300 transform hover:scale-105 text-center"
               >
                 Book with Google
               </a>
