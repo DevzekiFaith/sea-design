@@ -159,17 +159,6 @@ const HeroPage: React.FC = () => {
                     &ldquo;{slides[currentIndex].quote}&rdquo;
                   </motion.p>
                 )}
-                <motion.div variants={textVariants}>
-                  <Link href="/ceostatement" legacyBehavior>
-                    <motion.button 
-                      className="btn btn-primary text-lg px-8 py-4 font-semibold"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Read CEO&apos;s Statement
-                    </motion.button>
-                  </Link>
-                </motion.div>
               </motion.div>
             </div>
           </motion.div>

@@ -10,7 +10,6 @@ const teamMembers = [
     image: "/images/ceo3.jpg",
     content:
       "Prince (Dr) Andrew Lucky Eseigbe IGBERAESE is the CEO of Lucktang Int'l Limited. With over 20 years of experience in the marine industry, he leads the company with a vision for innovation and excellence.",
-    profileLink: "/about/ceoprofile",
   },
   {
     id: 2,
@@ -19,7 +18,6 @@ const teamMembers = [
     image: "/images/coo1.jpg",
     content:
       "Njideka Nwalor is the COO of Lucktang Int'l Limited. She oversees the company's operations, ensuring efficiency and effectiveness in all processes.",
-    profileLink: "/about/cooprofile",
   },
   {
     id: 3,
