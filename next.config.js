@@ -5,6 +5,13 @@ const nextConfig = {
   poweredByHeader: false,
   images: {
     domains: ['images.unsplash.com'],
+    unoptimized: false,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
   // Handle static files
   async headers() {

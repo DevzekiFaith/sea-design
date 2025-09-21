@@ -48,21 +48,21 @@ export default function ClientPage() {
       >
         {/* Hero Section */}
         <motion.section
-          className="mb-16 text-center py-16"
+          className="mb-16 text-center py-8 sm:py-16"
           variants={sectionVariants}
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h1 className="text-6xl font-bold mb-6 text-slate-800 display-font">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-800 display-font px-4">
             Welcome to Lucktang Intl Limited
           </h1>
-          <p className="text-xl mb-8 text-slate-600 max-w-4xl mx-auto">
+          <p className="text-lg sm:text-xl mb-8 text-slate-600 max-w-4xl mx-auto px-4">
             Your trusted partner in energy solutions and comprehensive business operations.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <Link href="/services">
               <motion.button 
-                className="btn btn-primary px-8 py-4 text-lg"
+                className="btn btn-primary px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -71,7 +71,7 @@ export default function ClientPage() {
             </Link>
             <Link href="/about">
               <motion.button 
-                className="btn btn-secondary px-8 py-4 text-lg"
+                className="btn btn-secondary px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -88,35 +88,40 @@ export default function ClientPage() {
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">Our Core Services</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 text-slate-800 px-4">Our Core Services</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* LNG Services Section */}
             <motion.div
-              className="card p-8"
+              className="card p-4 sm:p-6 md:p-8"
               variants={sectionVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="md:w-1/2">
-                  <div className="relative h-64 w-full transform transition-transform duration-500 hover:scale-105">
-                    <Image
+                <div className="w-full md:w-1/2">
+                  <div className="w-full h-48 sm:h-56 md:h-64 transform transition-transform duration-500 hover:scale-105 overflow-hidden rounded-lg bg-gray-200">
+                    <img
                       src="/images/lng3.jpeg"
                       alt="LNG Services"
-                      fill
-                      style={{ objectFit: "cover" }}
-                      className="rounded-lg"
+                      className="w-full h-full object-cover rounded-lg"
+                      onError={(e) => {
+                        console.log('LNG Image failed to load:', e);
+                        e.currentTarget.style.display = 'none';
+                      }}
+                      onLoad={() => {
+                        console.log('LNG Image loaded successfully');
+                      }}
                     />
                   </div>
                 </div>
-                <div className="md:w-1/2 text-center md:text-left">
-                  <h3 className="text-3xl font-bold mb-4 card-title">LNG Services</h3>
-                  <p className="text-lg mb-6 card-content">
+                <div className="w-full md:w-1/2 text-center md:text-left">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 card-title">LNG Services</h3>
+                  <p className="text-base sm:text-lg mb-6 card-content">
                     Delivering innovative and reliable Liquefied Natural Gas solutions for modern energy needs.
                   </p>
                   <Link href="/lng">
                     <motion.button 
-                      className="btn btn-primary"
+                      className="btn btn-primary w-full sm:w-auto"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -129,37 +134,42 @@ export default function ClientPage() {
 
             {/* CNG Services Section */}
             <motion.div
-              className="card p-8"
+              className="card p-4 sm:p-6 md:p-8"
               variants={sectionVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="md:w-1/2">
-                  <div className="relative h-64 w-full transform transition-transform duration-500 hover:scale-105">
-                    <Image
+                <div className="w-full md:w-1/2">
+                  <div className="w-full h-48 sm:h-56 md:h-64 transform transition-transform duration-500 hover:scale-105 overflow-hidden rounded-lg bg-gray-200">
+                    <img
                       src="/images/cng1.jpg"
                       alt="CNG Services"
-                      fill
-                      style={{ objectFit: "cover" }}
-                      className="rounded-lg"
+                      className="w-full h-full object-cover rounded-lg"
+                      onError={(e) => {
+                        console.log('CNG Image failed to load:', e);
+                        e.currentTarget.style.display = 'none';
+                      }}
+                      onLoad={() => {
+                        console.log('CNG Image loaded successfully');
+                      }}
                     />
                   </div>
                 </div>
-                <div className="md:w-1/2 text-center md:text-left">
-                  <h3 className="text-3xl font-bold mb-4 card-title">CNG Services</h3>
-                  <p className="text-lg mb-6 card-content">
-                    Providing efficient and sustainable Compressed Natural Gas solutions for various applications.
-                  </p>
-                  <Link href="/cng">
-                    <motion.button 
-                      className="btn btn-primary"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Learn More About CNG
-                    </motion.button>
-                  </Link>
+                <div className="w-full md:w-1/2 text-center md:text-left">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 card-title">CNG Services</h3>
+                  <p className="text-base sm:text-lg mb-6 card-content">
+              Providing efficient and sustainable Compressed Natural Gas solutions for various applications.
+            </p>
+            <Link href="/cng">
+              <motion.button 
+                      className="btn btn-primary w-full sm:w-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Learn More About CNG
+              </motion.button>
+            </Link>
                 </div>
               </div>
             </motion.div>

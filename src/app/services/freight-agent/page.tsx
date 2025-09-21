@@ -73,9 +73,10 @@ const ShipPortOperationAgent: React.FC = () => {
         <Image
           src="/images/s1.jpg"
           alt="Freight, Logistics and Shipping Management"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           className="z-0"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black opacity-50 flex flex-col items-center justify-center text-center text-white p-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">

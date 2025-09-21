@@ -89,6 +89,11 @@ const ClientReview: React.FC = () => {
                       width={200}
                       height={200}
                       className="rounded-full"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        objectFit: "cover"
+                      }}
                     />
                   </div>
                   <div>
