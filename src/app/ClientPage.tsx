@@ -100,17 +100,14 @@ export default function ClientPage() {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="w-full md:w-1/2">
                   <div className="w-full h-48 sm:h-56 md:h-64 transform transition-transform duration-500 hover:scale-105 overflow-hidden rounded-lg bg-gray-200">
-                    <img
+                    <Image
                       src="/images/lng3.jpeg"
                       alt="LNG Services"
+                      width={600}
+                      height={400}
                       className="w-full h-full object-cover rounded-lg"
-                      onError={(e) => {
-                        console.log('LNG Image failed to load:', e);
-                        e.currentTarget.style.display = 'none';
-                      }}
-                      onLoad={() => {
-                        console.log('LNG Image loaded successfully');
-                      }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority
                     />
                   </div>
                 </div>
@@ -142,17 +139,14 @@ export default function ClientPage() {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="w-full md:w-1/2">
                   <div className="w-full h-48 sm:h-56 md:h-64 transform transition-transform duration-500 hover:scale-105 overflow-hidden rounded-lg bg-gray-200">
-                    <img
+                    <Image
                       src="/images/cng1.jpg"
                       alt="CNG Services"
+                      width={600}
+                      height={400}
                       className="w-full h-full object-cover rounded-lg"
-                      onError={(e) => {
-                        console.log('CNG Image failed to load:', e);
-                        e.currentTarget.style.display = 'none';
-                      }}
-                      onLoad={() => {
-                        console.log('CNG Image loaded successfully');
-                      }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority
                     />
                   </div>
                 </div>
