@@ -20,22 +20,63 @@ const Footer: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+        duration: 0.8
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 50, opacity: 0, scale: 0.9 },
     visible: {
       y: 0,
-      opacity: 1
+      opacity: 1,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        duration: 0.6
+      }
+    }
+  };
+
+  const floatingVariants = {
+    animate: {
+      y: [-10, 10, -10],
+      rotate: [0, 5, -5, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const waveVariants = {
+    animate: {
+      x: [-5, 5, -5],
+      rotate: [0, 2, -2, 0],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
     }
   };
 
   return (
-    <footer className="relative mt-20 overflow-hidden">
+    <motion.footer 
+      className="relative mt-20 overflow-hidden"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ 
+        duration: 0.8,
+        ease: "easeOut"
+      }}
+    >
       {/* Background with maritime theme */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900">
         <div className="absolute inset-0 bg-[url('/images/watermap.jpg')] opacity-10 bg-cover bg-center" />
@@ -43,9 +84,22 @@ const Footer: React.FC = () => {
       </div>
       
       {/* Floating maritime elements */}
-      <div className="absolute top-10 left-10 w-16 h-16 glassmorphic rounded-full floating opacity-30" />
-      <div className="absolute top-20 right-20 w-12 h-12 glassmorphic-ocean rounded-full wave opacity-20" />
-      <div className="absolute bottom-20 left-1/4 w-8 h-8 glassmorphic rounded-full floating opacity-25" />
+      <motion.div 
+        className="absolute top-10 left-10 w-16 h-16 glassmorphic rounded-full opacity-30" 
+        variants={floatingVariants}
+        animate="animate"
+      />
+      <motion.div 
+        className="absolute top-20 right-20 w-12 h-12 glassmorphic-ocean rounded-full opacity-20" 
+        variants={waveVariants}
+        animate="animate"
+      />
+      <motion.div 
+        className="absolute bottom-20 left-1/4 w-8 h-8 glassmorphic rounded-full opacity-25" 
+        variants={floatingVariants}
+        animate="animate"
+        transition={{ delay: 1 }}
+      />
 
       <motion.div 
         className="relative z-10 text-white p-8"
@@ -60,7 +114,16 @@ const Footer: React.FC = () => {
             <motion.div 
               className="flex justify-center"
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.05,
+                rotateY: 5,
+                transition: { 
+                  type: "spring", 
+                  stiffness: 300, 
+                  damping: 20,
+                  duration: 0.3
+                }
+              }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               <div className="relative glassmorphic-maritime p-4 rounded-3xl">
@@ -159,14 +222,32 @@ const Footer: React.FC = () => {
                 ].map((social, index) => (
                   <motion.div
                     key={index}
-                    whileHover={{ scale: 1.2, y: -5 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ 
+                      delay: 0.5 + (index * 0.1),
+                      type: "spring",
+                      stiffness: 200,
+                      damping: 15
+                    }}
+                    whileHover={{ 
+                      scale: 1.2, 
+                      y: -5,
+                      rotate: 360,
+                      transition: { 
+                        type: "spring", 
+                        stiffness: 400, 
+                        damping: 10,
+                        duration: 0.4
+                      }
+                    }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <Link href={social.href} passHref>
-                      <div className={`w-12 h-12 glassmorphic rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300 ${social.color}`}>
+                      <div className={`w-12 h-12 glassmorphic rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${social.color} hover:shadow-lg hover:shadow-blue-500/25`}>
                         <social.icon size={20} />
-              </div>
-            </Link>
+                      </div>
+                    </Link>
                   </motion.div>
                 ))}
               </div>
@@ -196,7 +277,7 @@ const Footer: React.FC = () => {
           </motion.div>
               </div>
       </motion.div>
-    </footer>
+    </motion.footer>
   );
 };
 
