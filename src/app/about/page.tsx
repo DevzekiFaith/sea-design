@@ -63,7 +63,7 @@ const AboutPage: React.FC = () => {
             <p className="text-lg leading-relaxed text-slate-700">
               At Lucktang, our mission is to deliver high-quality energy
               services and solutions that empower businesses to achieve their
-              goals. We strive to exceed our clients' expectations through
+              goals. We strive to exceed our clients expectations through
               creativity, innovation, and a commitment to excellence in the
               energy industry.
             </p>
@@ -109,7 +109,7 @@ const AboutPage: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold mb-3 text-slate-800">Customer Focus</h3>
               <p className="text-slate-700 text-sm">
-                We prioritize our clients' needs and work closely with them to achieve their vision.
+                We prioritize our clients needs and work closely with them to achieve their vision.
               </p>
             </div>
           </div>
@@ -125,7 +125,7 @@ const AboutPage: React.FC = () => {
               <p className="text-lg leading-relaxed text-slate-700">
                 Our team is composed of talented professionals with diverse
                 backgrounds in energy services, technology, and business. We work
-                collaboratively to bring our clients' ideas to life and
+                collaboratively to bring our clients ideas to life and
                 ensure their success in the energy industry.
               </p>
             </div>

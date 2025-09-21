@@ -127,7 +127,7 @@ const Dredging: React.FC = () => {
                 <p className="text-lg leading-relaxed text-slate-700">
                   Our track record speaks for itself - we have successfully completed numerous 
                   dredging projects across different environments, from shallow coastal areas 
-                  to deep-water ports. We strive to exceed our clients' expectations and 
+                  to deep-water ports. We strive to exceed our clients expectations and 
                   deliver exceptional results on every project, ensuring long-term value and 
                   operational success.
                 </p>
