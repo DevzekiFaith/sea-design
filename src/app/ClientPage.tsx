@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import { motion } from '@/lib/motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Import client components with no SSR
 const Header = dynamic(() => import('@/component/Header/Header'), { ssr: false });
@@ -88,49 +89,79 @@ export default function ClientPage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">Our Core Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* LNG Services Section */}
             <motion.div
-              className="card p-8 text-center"
+              className="card p-8"
               variants={sectionVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <h3 className="text-3xl font-bold mb-4 card-title">LNG Services</h3>
-              <p className="text-lg mb-6 card-content">
-                Delivering innovative and reliable Liquefied Natural Gas solutions for modern energy needs.
-              </p>
-              <Link href="/lng">
-                <motion.button 
-                  className="btn btn-primary"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Learn More About LNG
-                </motion.button>
-              </Link>
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="md:w-1/2">
+                  <div className="relative h-64 w-full transform transition-transform duration-500 hover:scale-105">
+                    <Image
+                      src="/images/lng3.jpeg"
+                      alt="LNG Services"
+                      fill
+                      style={{ objectFit: "cover" }}
+                      className="rounded-lg"
+                    />
+                  </div>
+                </div>
+                <div className="md:w-1/2 text-center md:text-left">
+                  <h3 className="text-3xl font-bold mb-4 card-title">LNG Services</h3>
+                  <p className="text-lg mb-6 card-content">
+                    Delivering innovative and reliable Liquefied Natural Gas solutions for modern energy needs.
+                  </p>
+                  <Link href="/lng">
+                    <motion.button 
+                      className="btn btn-primary"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Learn More About LNG
+                    </motion.button>
+                  </Link>
+                </div>
+              </div>
             </motion.div>
 
             {/* CNG Services Section */}
             <motion.div
-              className="card p-8 text-center"
+              className="card p-8"
               variants={sectionVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <h3 className="text-3xl font-bold mb-4 card-title">CNG Services</h3>
-              <p className="text-lg mb-6 card-content">
-                Providing efficient and sustainable Compressed Natural Gas solutions for various applications.
-              </p>
-              <Link href="/cng">
-                <motion.button 
-                  className="btn btn-primary"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Learn More About CNG
-                </motion.button>
-              </Link>
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="md:w-1/2">
+                  <div className="relative h-64 w-full transform transition-transform duration-500 hover:scale-105">
+                    <Image
+                      src="/images/cng1.jpg"
+                      alt="CNG Services"
+                      fill
+                      style={{ objectFit: "cover" }}
+                      className="rounded-lg"
+                    />
+                  </div>
+                </div>
+                <div className="md:w-1/2 text-center md:text-left">
+                  <h3 className="text-3xl font-bold mb-4 card-title">CNG Services</h3>
+                  <p className="text-lg mb-6 card-content">
+                    Providing efficient and sustainable Compressed Natural Gas solutions for various applications.
+                  </p>
+                  <Link href="/cng">
+                    <motion.button 
+                      className="btn btn-primary"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Learn More About CNG
+                    </motion.button>
+                  </Link>
+                </div>
+              </div>
             </motion.div>
           </div>
         </motion.section>
