@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 const teamMembers = [
   {
@@ -58,17 +57,6 @@ const Team: React.FC = () => {
             </h3>
             <p className="text-center text-gray-500 mb-4">{member.role}</p>
             <p className="text-center text-gray-400 mb-4">{member.content}</p>
-            {member.profileLink && (
-              <div className="flex justify-center">
-                <Link href={member.profileLink} legacyBehavior>
-                  <button className="bg-blue-600 text-white 
-                  px-6 py-2 rounded-full font-semibold 
-                  hover:bg-blue-700 transition duration-300 cursor-pointer">
-                    View Profile
-                  </button>
-                </Link>
-              </div>
-            )}
           </div>
         ))}
       </div>
