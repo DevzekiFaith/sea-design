@@ -59,7 +59,7 @@ const LNG: React.FC = () => {
             <div className="neumorphic p-6 text-center">
               <div className="relative h-64 w-full mb-4 transform transition-transform duration-500 hover:scale-105">
                 <Image
-                  src="/images/lng2.jpg"
+                  src="/images/LNG2.jpg"
                   alt="LNG Storage Terminal"
                   fill
                   style={{ objectFit: "cover" }}
