@@ -1,6 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const BackButton = dynamic(() => import("@/components/BackButton/BackButton"), { ssr: false });
 
 const services = [
   {
@@ -68,6 +71,7 @@ const services = [
 const ShipPortOperationAgent: React.FC = () => {
   return (
     <div>
+      <BackButton />
       {/* Hero Section */}
       <div className="relative h-[50vh] md:h-[70vh] w-full">
         <Image

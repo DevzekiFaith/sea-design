@@ -118,13 +118,14 @@ const Footer: React.FC = () => {
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               <div className="relative glassmorphic-maritime p-4 rounded-3xl">
-                <div className="w-full max-w-[400px] h-[300px] overflow-hidden rounded-2xl">
+                <div className="w-full min-w-[280px] max-w-[400px] h-[300px] overflow-hidden rounded-2xl mx-auto relative">
                   <Image
                     src="/images/s1.jpg"
                     alt="Maritime Operations"
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="rounded-2xl"
+                    sizes="(max-width: 480px) 280px, (max-width: 768px) 100vw, 400px"
                   />
                 </div>
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">

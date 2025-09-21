@@ -9,13 +9,14 @@ const History: React.FC = () => {
       </h1>
       <div className="bg-black p-8 shadow-lg flex flex-col items-center">
         <div className="flex flex-col md:flex-row items-center">
-          <div className="mb-4 md:mb-0 md:mr-4 transform transition-transform duration-500 hover:scale-x-105">
+          <div className="mb-4 md:mb-0 md:mr-4 transform transition-transform duration-500 hover:scale-x-105 w-full md:w-[500px] h-[500px] relative">
             <Image
               src="/images/s5.jpg"
               alt="Company History"
-              width={500}
-              height={500}
-              className="rounded-lg w-full md:w-auto"
+              fill
+              style={{ objectFit: "cover" }}
+              className="rounded-lg"
+              sizes="(max-width: 768px) 100vw, 500px"
             />
           </div>
           <div className="md:w-1/2 w-full transform transition-transform duration-500 hover:scale-x-105">

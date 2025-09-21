@@ -12,12 +12,14 @@ import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
+const BackButton = dynamic(() => import("@/components/BackButton/BackButton"), { ssr: false });
 
 export default function Contact() {
   return (
     <div className="bg-white min-h-screen">
       <div>
         <Header />
+        <BackButton />
       </div>
 
       {/* Hero Section */}
@@ -25,9 +27,10 @@ export default function Contact() {
         <Image
           src="/images/watermap.jpg"
           alt="Contact Us"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           className="z-0"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black opacity-50 flex flex-col items-center justify-center text-center text-white p-4 pt-[6rem] ">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">hello Dear!</h1>
@@ -46,13 +49,16 @@ export default function Contact() {
         </div>
         <div className="bg-black p-8 rounded-2xl shadow-lg mt-10 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-6 md:mb-0 md:mr-6 transform transition-transform duration-500 hover:scale-y-105">
-            <Image
-              src="/images/watermap.jpg"
-              alt="Contact Us"
-              width={600}
-              height={600}
-              className="rounded-lg"
-            />
+            <div className="w-full h-64 md:h-80 relative">
+              <Image
+                src="/images/watermap.jpg"
+                alt="Contact Us"
+                fill
+                style={{ objectFit: "cover" }}
+                className="rounded-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
           <div className="md:w-1/2">
             <div className="mb-6">

@@ -6,11 +6,13 @@ import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
+const BackButton = dynamic(() => import("@/components/BackButton/BackButton"), { ssr: false });
 
 const AboutPage: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
       <Header />
+      <BackButton />
 
       {/* Hero Section with Glassmorphism */}
       <div className="relative h-[60vh] md:h-[80vh] w-full mt-20">
@@ -20,6 +22,7 @@ const AboutPage: React.FC = () => {
           fill
           style={{ objectFit: "cover" }}
           className="z-0"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
@@ -46,6 +49,7 @@ const AboutPage: React.FC = () => {
                 fill
                 style={{ objectFit: "cover" }}
                 className="rounded-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -159,6 +163,7 @@ const AboutPage: React.FC = () => {
                 fill
                 style={{ objectFit: "cover" }}
                 className="rounded-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

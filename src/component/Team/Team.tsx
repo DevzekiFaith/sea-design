@@ -44,13 +44,14 @@ const Team: React.FC = () => {
             className="bg-black shadow-md p-8 rounded-2xl transform transition-transform duration-500 hover:scale-105 hover:translate-y-6"
           >
             <div className="flex justify-center mb-6">
-              <div className="w-56 h-56">
+              <div className="w-56 h-56 relative">
                 <Image
                   src={member.image}
                   alt={member.name}
-                  width={224}
-                  height={224}
-                  className="rounded-full object-cover w-full h-full"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="rounded-full"
+                  sizes="224px"
                 />
               </div>
             </div>

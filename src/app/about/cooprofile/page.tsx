@@ -7,11 +7,13 @@ import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
+const BackButton = dynamic(() => import("@/components/BackButton/BackButton"), { ssr: false });
 
 const COOProfile: React.FC = () => {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       <Header />
+      <BackButton />
       <div className="container mx-auto p-8 pt-[8rem]">
         <Link href="/" legacyBehavior>
           <button

@@ -6,11 +6,13 @@ import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
+const BackButton = dynamic(() => import("@/components/BackButton/BackButton"), { ssr: false });
 
 const Dredging: React.FC = () => {
   return (
     <div className="bg-white text-slate-800 min-h-screen">
       <Header />
+      <BackButton />
       <div className="container mx-auto p-8 pt-[8rem]">
         <h1 className="text-5xl font-bold text-center mb-12 text-slate-800">
           Dredging Services
@@ -28,6 +30,7 @@ const Dredging: React.FC = () => {
                   fill
                   style={{ objectFit: "cover" }}
                   className="rounded-lg shadow-lg"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -38,6 +41,7 @@ const Dredging: React.FC = () => {
                     fill
                     style={{ objectFit: "cover" }}
                     className="rounded-lg shadow-lg"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 16vw"
                   />
                 </div>
                 <div className="relative h-48 w-full transform transition-transform duration-500 hover:scale-105">
@@ -47,6 +51,7 @@ const Dredging: React.FC = () => {
                     fill
                     style={{ objectFit: "cover" }}
                     className="rounded-lg shadow-lg"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 16vw"
                   />
                 </div>
               </div>

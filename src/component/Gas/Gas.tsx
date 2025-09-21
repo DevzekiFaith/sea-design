@@ -20,9 +20,10 @@ const Gas: React.FC = () => {
               <Image
                 src="/images/LNG2.jpg"
                 alt="LNG Gas Plant"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 className="rounded-lg"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             <p className="text-lg mb-6">

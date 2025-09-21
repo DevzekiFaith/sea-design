@@ -9,6 +9,7 @@ import Image from 'next/image';
 const Header = dynamic(() => import('@/component/Header/Header'), { ssr: false });
 const ClientReview = dynamic(() => import('@/component/ClientReview/Client'), { ssr: false });
 const Footer = dynamic(() => import('@/components/Footer/Footer'), { ssr: false });
+const BackButton = dynamic(() => import('@/components/BackButton/BackButton'), { ssr: false });
 
 // Animation variants
 const containerVariants = {
@@ -39,6 +40,7 @@ export default function ClientPage() {
   return (
     <div className="min-h-screen bg-white text-slate-800 transition-colors duration-300">
       <Header />
+      <BackButton />
 
       <motion.main
         className="container mx-auto px-4 sm:px-6 lg:px-8 py-8"
@@ -100,15 +102,17 @@ export default function ClientPage() {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="w-full md:w-1/2">
                   <div className="w-full h-48 sm:h-56 md:h-64 transform transition-transform duration-500 hover:scale-105 overflow-hidden rounded-lg bg-gray-200">
-                    <Image
-                      src="/images/lng3.jpeg"
-                      alt="LNG Services"
-                      width={600}
-                      height={400}
-                      className="w-full h-full object-cover rounded-lg"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      priority
-                    />
+                    <div className="w-full h-full relative">
+                      <Image
+                        src="/images/lng3.jpeg"
+                        alt="LNG Services"
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className="rounded-lg"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 text-center md:text-left">
@@ -139,15 +143,17 @@ export default function ClientPage() {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="w-full md:w-1/2">
                   <div className="w-full h-48 sm:h-56 md:h-64 transform transition-transform duration-500 hover:scale-105 overflow-hidden rounded-lg bg-gray-200">
-                    <Image
-                      src="/images/cng1.jpg"
-                      alt="CNG Services"
-                      width={600}
-                      height={400}
-                      className="w-full h-full object-cover rounded-lg"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      priority
-                    />
+                    <div className="w-full h-full relative">
+                      <Image
+                        src="/images/cng1.jpg"
+                        alt="CNG Services"
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className="rounded-lg"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 text-center md:text-left">

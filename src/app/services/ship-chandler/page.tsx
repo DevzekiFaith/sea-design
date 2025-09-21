@@ -1,6 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const BackButton = dynamic(() => import("@/components/BackButton/BackButton"), { ssr: false });
 
 const services = [
   {
@@ -26,13 +29,15 @@ const services = [
 const ShipChandler: React.FC = () => {
   return (
     <div>
+      <BackButton />
       {/* Hero Section */}
       <div className="relative h-[50vh] md:h-[70vh] w-full">
         <Image
           src="/images/bs 1.webp"
           alt="Ship Chandler Services"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="100vw"
           className="z-0"
         />
         <div className="absolute inset-0 bg-black opacity-50 flex flex-col items-center justify-center text-center text-white p-4">

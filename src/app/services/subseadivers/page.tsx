@@ -4,6 +4,8 @@ import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
+const BackButton = dynamic(() => import("@/components/BackButton/BackButton"), { ssr: false });
+
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
 
@@ -11,6 +13,7 @@ const SubseaDivers: React.FC = () => {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       <Header />
+      <BackButton />
       <div className="container mx-auto p-8 pt-[6rem]">
         <h1 className="text-4xl font-bold text-center mb-8 text-blue-500">
           Subsea Divers and Topside Engineering Services
@@ -21,27 +24,30 @@ const SubseaDivers: React.FC = () => {
               <Image
                 src="/images/div1.png"
                 alt="Subsea Divers Service"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 className="rounded-lg"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
             <div className="relative h-80 w-full">
               <Image
                 src="/images/div2.jpg"
                 alt="Subsea Divers Service 2"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 className="rounded-lg"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
             <div className="relative h-80 w-full">
               <Image
                 src="/images/div3.jpeg"
                 alt="Subsea Divers Service 3"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 className="rounded-lg"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
           </div>
