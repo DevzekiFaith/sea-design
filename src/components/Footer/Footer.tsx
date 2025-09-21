@@ -32,37 +32,7 @@ const Footer: React.FC = () => {
     visible: {
       y: 0,
       opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-        duration: 0.6
-      }
-    }
-  };
-
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      rotate: [0, 5, -5, 0],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  const waveVariants = {
-    animate: {
-      x: [-5, 5, -5],
-      rotate: [0, 2, -2, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
+      scale: 1
     }
   };
 
@@ -86,19 +56,40 @@ const Footer: React.FC = () => {
       {/* Floating maritime elements */}
       <motion.div 
         className="absolute top-10 left-10 w-16 h-16 glassmorphic rounded-full opacity-30" 
-        variants={floatingVariants}
-        animate="animate"
+        animate={{
+          y: [-10, 10, -10],
+          rotate: [0, 5, -5, 0]
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       />
       <motion.div 
         className="absolute top-20 right-20 w-12 h-12 glassmorphic-ocean rounded-full opacity-20" 
-        variants={waveVariants}
-        animate="animate"
+        animate={{
+          x: [-5, 5, -5],
+          rotate: [0, 2, -2, 0]
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       />
       <motion.div 
         className="absolute bottom-20 left-1/4 w-8 h-8 glassmorphic rounded-full opacity-25" 
-        variants={floatingVariants}
-        animate="animate"
-        transition={{ delay: 1 }}
+        animate={{
+          y: [-10, 10, -10],
+          rotate: [0, 5, -5, 0]
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
       />
 
       <motion.div 
