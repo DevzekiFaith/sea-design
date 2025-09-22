@@ -10,7 +10,6 @@ import {
   FaPhone,
   FaMapMarkerAlt,
   FaWhatsapp,
-  FaShip,
   FaIndustry,
 } from "react-icons/fa";
 
