@@ -4,6 +4,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { usePageState } from '@/hooks/usePageState';
+import Loading from '@/components/Loading/Loading';
+import Error from '@/components/Error/Error';
 
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
@@ -18,9 +21,82 @@ const services = [
     route: "/services/dredging",
     image: "/images/dreg2.jpg",
   },
+  {
+    id: 2,
+    title: "CNG Plant Services",
+    description:
+      "Compressed Natural Gas (CNG) plant design, construction, and maintenance services for efficient gas compression and distribution systems.",
+    route: "/services/cng",
+    image: "/images/cng1.jpg",
+    features: [
+      "CNG compression systems",
+      "Gas purification and treatment",
+      "Storage and distribution networks",
+      "Safety and monitoring systems"
+    ]
+  },
+  {
+    id: 3,
+    title: "LNG Plant Services",
+    description:
+      "Liquefied Natural Gas (LNG) plant solutions including liquefaction, storage, and regasification facilities for global energy markets.",
+    route: "/services/lng",
+    image: "/images/LNG2.jpg",
+    features: [
+      "LNG liquefaction plants",
+      "Cryogenic storage systems",
+      "Regasification terminals",
+      "Marine loading facilities"
+    ]
+  },
+  {
+    id: 4,
+    title: "LPG Plant Services",
+    description:
+      "Liquefied Petroleum Gas (LPG) plant services covering production, processing, storage, and distribution infrastructure development.",
+    route: "/services/lpg",
+    image: "/images/lng3.jpeg",
+    features: [
+      "LPG processing plants",
+      "Bulk storage facilities",
+      "Filling and bottling stations",
+      "Pipeline distribution systems"
+    ]
+  },
 ];
 
 const ServicesPage: React.FC = () => {
+  const { isLoading, error, retry, goHome } = usePageState({
+    initialLoading: true,
+    maxRetries: 3
+  });
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <Loading 
+          message="Loading Services..." 
+          size="large" 
+          variant="spinner" 
+        />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center p-4">
+        <Error
+          title="Failed to Load Services"
+          message={error}
+          onRetry={retry}
+          onGoHome={goHome}
+          variant="error"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white min-h-screen">
       <Header />
@@ -41,7 +117,7 @@ const ServicesPage: React.FC = () => {
           <div className="glassmorphic p-12 max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 display-font">Our Services</h1>
             <p className="text-xl md:text-2xl leading-relaxed">
-              Professional dredging solutions for marine and inland water environments.
+              Comprehensive energy solutions including dredging, CNG, LNG, and LPG plant services for modern industrial needs.
             </p>
           </div>
         </div>
@@ -55,33 +131,49 @@ const ServicesPage: React.FC = () => {
             Our Professional Services
           </h2>
           
-          <div className="flex justify-center">
-            <div className="max-w-2xl w-full">
-              {services.map((service) => (
-                <div
-                  key={service.id}
-                  className="neumorphic p-8 transform transition-all duration-300 hover:scale-105"
-                >
-                  <div className="text-center">
-                    <div className="relative h-80 w-full mb-8 transform transition-transform duration-500 hover:scale-105">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        className="rounded-lg"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="neumorphic p-8 transform transition-all duration-300 hover:scale-105"
+              >
+                <div className="text-center">
+                  <div className="relative h-80 w-full mb-8 transform transition-transform duration-500 hover:scale-105">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      className="rounded-lg"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                  
+                  <h3 className="text-3xl font-bold mb-6 text-slate-800 card-title">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-lg leading-relaxed text-slate-700 mb-8">
+                    {service.description}
+                  </p>
+                  
+                  {service.features && (
+                    <div className="glassmorphic p-6 mb-8">
+                      <h4 className="text-xl font-semibold mb-4 text-slate-800">
+                        Key Features & Services
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700">
+                        {service.features.map((feature, index) => (
+                          <div key={index} className="flex items-center">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    
-                    <h3 className="text-3xl font-bold mb-6 text-slate-800 card-title">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-lg leading-relaxed text-slate-700 mb-8">
-                      {service.description}
-                    </p>
-                    
+                  )}
+                  
+                  {!service.features && (
                     <div className="glassmorphic p-6 mb-8">
                       <h4 className="text-xl font-semibold mb-4 text-slate-800">
                         Why Choose Our Dredging Services?
@@ -105,16 +197,16 @@ const ServicesPage: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    
-                    <Link href={service.route}>
-                      <button className="btn btn-primary px-8 py-4 text-lg transform hover:scale-105 transition duration-300">
-                        Learn More About Dredging
-                      </button>
-                    </Link>
-                  </div>
+                  )}
+                  
+                  <Link href={service.route}>
+                    <button className="btn btn-primary px-8 py-4 text-lg transform hover:scale-105 transition duration-300">
+                      Learn More About {service.title.split(' ')[0]}
+                    </button>
+                  </Link>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -130,12 +222,16 @@ const ServicesPage: React.FC = () => {
                 <p className="text-slate-700 text-sm">Port and harbor maintenance, channel deepening, and coastal protection.</p>
               </div>
               <div className="glassmorphic p-4 rounded-lg">
-                <h4 className="font-semibold text-slate-800 mb-2">Environmental Dredging</h4>
-                <p className="text-slate-700 text-sm">Contaminated sediment removal and environmental restoration projects.</p>
+                <h4 className="font-semibold text-slate-800 mb-2">CNG Plant Solutions</h4>
+                <p className="text-slate-700 text-sm">Compressed natural gas compression, purification, and distribution systems.</p>
               </div>
               <div className="glassmorphic p-4 rounded-lg">
-                <h4 className="font-semibold text-slate-800 mb-2">Land Reclamation</h4>
-                <p className="text-slate-700 text-sm">Creating new land areas for development and infrastructure projects.</p>
+                <h4 className="font-semibold text-slate-800 mb-2">LNG Infrastructure</h4>
+                <p className="text-slate-700 text-sm">Liquefaction plants, cryogenic storage, and regasification terminals.</p>
+              </div>
+              <div className="glassmorphic p-4 rounded-lg">
+                <h4 className="font-semibold text-slate-800 mb-2">LPG Processing</h4>
+                <p className="text-slate-700 text-sm">LPG production, processing, storage, and distribution facilities.</p>
               </div>
             </div>
           </div>
@@ -146,10 +242,10 @@ const ServicesPage: React.FC = () => {
             </h3>
             <div className="neumorphic p-6">
               <p className="text-slate-700 leading-relaxed mb-4">
-                With years of experience in the dredging industry, we have built a reputation for delivering high-quality services that meet the most demanding project requirements.
+                With years of experience in energy infrastructure and marine services, we have built a reputation for delivering high-quality solutions that meet the most demanding project requirements across multiple industries.
               </p>
               <p className="text-slate-700 leading-relaxed">
-                Our commitment to safety, environmental responsibility, and operational excellence ensures that every project is completed to the highest standards while minimizing environmental impact.
+                Our commitment to safety, environmental responsibility, and operational excellence ensures that every project - from dredging operations to gas plant construction - is completed to the highest standards while minimizing environmental impact.
               </p>
             </div>
           </div>
@@ -161,7 +257,7 @@ const ServicesPage: React.FC = () => {
             Ready to Start Your Project?
           </h3>
           <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-            Contact us today to discuss your dredging needs and get a customized solution that meets your specific requirements.
+            Contact us today to discuss your energy infrastructure and marine service needs and get a customized solution that meets your specific requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">

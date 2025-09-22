@@ -9,12 +9,46 @@ import {
   FaPhone,
 } from "react-icons/fa";
 import dynamic from "next/dynamic";
+import { usePageState } from '@/hooks/usePageState';
+import Loading from '@/components/Loading/Loading';
+import Error from '@/components/Error/Error';
 
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
 const BackButton = dynamic(() => import("@/components/BackButton/BackButton"), { ssr: false });
 
 export default function Contact() {
+  const { isLoading, error, retry, goHome } = usePageState({
+    initialLoading: true,
+    maxRetries: 3
+  });
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <Loading 
+          message="Loading Contact Information..." 
+          size="large" 
+          variant="spinner" 
+        />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center p-4">
+        <Error
+          title="Failed to Load Contact Page"
+          message={error}
+          onRetry={retry}
+          onGoHome={goHome}
+          variant="error"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white min-h-screen">
       <div>

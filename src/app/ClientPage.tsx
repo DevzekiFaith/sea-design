@@ -4,6 +4,9 @@ import dynamic from 'next/dynamic';
 import { motion } from '@/lib/motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePageState } from '@/hooks/usePageState';
+import Loading from '@/components/Loading/Loading';
+import Error from '@/components/Error/Error';
 
 // Import client components with no SSR
 const Header = dynamic(() => import('@/component/Header/Header'), { ssr: false });
@@ -37,6 +40,37 @@ const sectionVariants = {
 };
 
 export default function ClientPage() {
+  const { isLoading, error, retry, goHome } = usePageState({
+    initialLoading: true,
+    maxRetries: 3
+  });
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <Loading 
+          message="Loading Lucktang Energy Solutions..." 
+          size="large" 
+          variant="spinner" 
+        />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center p-4">
+        <Error
+          title="Failed to Load Page"
+          message={error}
+          onRetry={retry}
+          onGoHome={goHome}
+          variant="error"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white text-slate-800 transition-colors duration-300">
       <Header />

@@ -3,12 +3,46 @@
 import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { usePageState } from '@/hooks/usePageState';
+import Loading from '@/components/Loading/Loading';
+import Error from '@/components/Error/Error';
 
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
 const BackButton = dynamic(() => import("@/components/BackButton/BackButton"), { ssr: false });
 
 const LNG: React.FC = () => {
+  const { isLoading, error, retry, goHome } = usePageState({
+    initialLoading: true,
+    maxRetries: 3
+  });
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <Loading 
+          message="Loading LNG Services..." 
+          size="large" 
+          variant="dots" 
+        />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center p-4">
+        <Error
+          title="Failed to Load LNG Services"
+          message={error}
+          onRetry={retry}
+          onGoHome={goHome}
+          variant="error"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white min-h-screen">
       <Header />

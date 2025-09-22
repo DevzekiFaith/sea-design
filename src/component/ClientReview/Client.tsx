@@ -7,50 +7,49 @@ import { FaStar } from "react-icons/fa";
 const reviews = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Dr. Sarah Chen",
     comment:
-      "Lucktang provided exceptional service and their team was very professional.",
+      "Lucktang's LNG solutions have revolutionized our energy infrastructure. Their expertise in liquefied natural gas technology is unmatched, and their commitment to safety and efficiency is exemplary.",
     image: "/images/p1.jpg",
-    position: "CEO, Bulltang",
+    position: "CEO, Global LNG Solutions",
     rating: 5,
   },
   {
     id: 2,
-    name: "James Smith",
+    name: "Marcus Thompson",
     comment:
-      "I am extremely satisfied with the quality of work delivered by Lucktang.",
+      "The CNG services provided by Lucktang have significantly reduced our operational costs while maintaining the highest environmental standards. Their compressed natural gas solutions are truly innovative.",
     image: "/images/p10.jpg",
-    position: "CEO, Oceanic Marine",
-    rating: 4,
+    position: "CEO, Clean Energy Corp",
+    rating: 5,
   },
   {
     id: 3,
-    name: "Michael Johnson",
+    name: "Elena Rodriguez",
     comment:
-      "Their innovative solutions helped our business grow significantly.",
+      "Working with Lucktang on our PNG pipeline project was exceptional. Their technical expertise and project management capabilities ensured timely delivery and exceeded our expectations.",
     image: "/images/p3.jpg",
-    position: "CEO, Car Merchants",
+    position: "CEO, Pipeline Energy Group",
     rating: 5,
   },
   {
     id: 4,
-    name: "James Walker",
+    name: "David Kim",
     comment:
-      "Their innovative solutions helped our business grow significantly.",
+      "Lucktang's comprehensive gas plant operations have been instrumental in our company's growth. Their LNG storage and distribution solutions are world-class and highly reliable.",
     image: "/images/p4.jpg",
-    position: "CEO, Peoples Purchase",
-    rating: 4,
+    position: "CEO, Advanced Gas Systems",
+    rating: 5,
   },
   {
     id: 5,
-    name: "Micah Waiter",
+    name: "Amara Okafor",
     comment:
-      "Their innovative solutions helped our business grow significantly.",
+      "The energy solutions provided by Lucktang have transformed our business operations. Their expertise in both LNG and CNG technologies makes them our preferred partner for all gas-related projects.",
     image: "/images/p5.jpg",
-    position: "CEO, BoatSeller",
+    position: "CEO, Sustainable Energy Ltd",
     rating: 5,
   },
-  // Add more reviews as needed
 ];
 
 const ClientReview: React.FC = () => {
@@ -66,7 +65,7 @@ const ClientReview: React.FC = () => {
   return (
     <div className="container mx-auto p-8 flex flex-col items-center justify-center">
       <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">
-        Client Reviews
+        Energy Industry Testimonials
       </h2>
       <div className="relative overflow-hidden w-full max-w-6xl rounded-2xl">
         <div

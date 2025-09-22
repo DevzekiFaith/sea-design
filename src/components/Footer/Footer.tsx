@@ -11,6 +11,7 @@ import {
   FaMapMarkerAlt,
   FaWhatsapp,
   FaShip,
+  FaIndustry,
 } from "react-icons/fa";
 
 const Footer: React.FC = () => {
@@ -120,8 +121,8 @@ const Footer: React.FC = () => {
               <div className="relative glassmorphic-maritime p-4 rounded-3xl">
                 <div className="w-full min-w-[280px] max-w-[400px] h-[300px] overflow-hidden rounded-2xl mx-auto relative">
                   <Image
-                    src="/images/s1.jpg"
-                    alt="Maritime Operations"
+                    src="/images/Gas Plant.jpg"
+                    alt="Gas Plant Operations"
                     fill
                     style={{ objectFit: "cover" }}
                     className="rounded-2xl"
@@ -129,7 +130,7 @@ const Footer: React.FC = () => {
                   />
                 </div>
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                  <FaShip className="text-white text-sm" />
+                  <FaIndustry className="text-white text-sm" />
                 </div>
               </div>
             </motion.div>
@@ -180,7 +181,15 @@ const Footer: React.FC = () => {
                   whileHover={{ x: 5 }}
                 >
                   <FaPhone className="text-blue-400" />
-                  <span>+33630645197</span>
+                  <span>+23470613506072</span>
+                </motion.div>
+
+                <motion.div
+                  className="flex items-center justify-center space-x-3 text-blue-200"
+                  whileHover={{ x: 5 }}
+                >
+                  <FaPhone className="text-blue-400" />
+                  <span>+2349125283494</span>
                 </motion.div>
 
                 <motion.div
@@ -189,7 +198,7 @@ const Footer: React.FC = () => {
                 >
                   <FaMapMarkerAlt className="text-blue-400" />
                   <span className="max-w-xs">
-                    3901 East Perkinsville Street, Gilbert, Arizona 85295, USA
+                    2 Thomas Igberaese Close Idi Saba Ebhoiyi Uromi Edo State, Nigeria
                   </span>
                 </motion.div>
               </div>
