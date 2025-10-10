@@ -93,14 +93,14 @@ const Footer: React.FC = () => {
       />
 
       <motion.div
-        className="relative z-10 text-white p-8"
+        className="relative z-10 text-white p-4 sm:p-6 md:p-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Company Image */}
             <motion.div
               className="flex justify-center"
@@ -139,64 +139,77 @@ const Footer: React.FC = () => {
               className="text-center space-y-6"
               variants={itemVariants}
             >
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <motion.h2
-                  className="text-3xl font-bold display-font bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"
+                  className="text-xl sm:text-2xl md:text-3xl font-black display-font bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"
                   whileHover={{ scale: 1.05 }}
                 >
                   Lucktang International Limited
                 </motion.h2>
                 <div className="flex items-center justify-center space-x-2">
-                  <span className="text-sm font-semibold tracking-wider text-blue-300">
+                  <span className="text-xs sm:text-sm font-bold tracking-wider text-blue-300">
                     ENERGY SOLUTIONS
                   </span>
                 </div>
               </div>
 
               <motion.p
-                className="text-blue-100 leading-relaxed max-w-md mx-auto"
+                className="text-blue-100 leading-relaxed max-w-md mx-auto text-sm sm:text-base font-medium"
                 whileHover={{ scale: 1.02 }}
               >
                 Providing innovative energy solutions with cutting-edge technology for
                 modern LNG and CNG operations.
               </motion.p>
 
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 <motion.div
-                  className="flex items-center justify-center space-x-3 text-blue-200"
+                  className="flex items-center justify-center space-x-2 sm:space-x-3 text-blue-200"
                   whileHover={{ x: 5 }}
                 >
-                  <FaEnvelope className="text-blue-400" />
+                  <FaEnvelope className="text-blue-400 text-sm sm:text-base" />
                   <a
                     href="mailto:addluckenergy41@gmail.com"
-                    className="hover:text-white transition-colors duration-300"
+                    className="hover:text-white transition-colors duration-300 text-xs sm:text-sm font-medium"
                   >
                     addluckenergy41@gmail.com
                   </a>
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center justify-center space-x-3 text-blue-200"
+                  className="flex items-center justify-center space-x-2 sm:space-x-3 text-blue-200"
                   whileHover={{ x: 5 }}
                 >
-                  <FaPhone className="text-blue-400" />
-                  <span>+23470613506072</span>
+                  <FaEnvelope className="text-blue-400 text-sm sm:text-base" />
+                  <a
+                    href="mailto:info@lucktangngltd.com"
+                    className="hover:text-white transition-colors duration-300 text-xs sm:text-sm font-medium"
+                  >
+                    info@lucktangngltd.com
+                  </a>
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center justify-center space-x-3 text-blue-200"
+                  className="flex items-center justify-center space-x-2 sm:space-x-3 text-blue-200"
                   whileHover={{ x: 5 }}
                 >
-                  <FaPhone className="text-blue-400" />
-                  <span>+2349125283494</span>
+                  <FaPhone className="text-blue-400 text-sm sm:text-base" />
+                  <span className="text-xs sm:text-sm font-medium">+23470613506072</span>
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center justify-center space-x-3 text-blue-200 text-sm"
+                  className="flex items-center justify-center space-x-2 sm:space-x-3 text-blue-200"
                   whileHover={{ x: 5 }}
                 >
-                  <FaMapMarkerAlt className="text-blue-400" />
-                  <span className="max-w-xs">
+                  <FaPhone className="text-blue-400 text-sm sm:text-base" />
+                  <span className="text-xs sm:text-sm font-medium">+2349125283494</span>
+                </motion.div>
+
+                <motion.div
+                  className="flex items-center justify-center space-x-2 sm:space-x-3 text-blue-200 text-xs sm:text-sm"
+                  whileHover={{ x: 5 }}
+                >
+                  <FaMapMarkerAlt className="text-blue-400 text-sm sm:text-base" />
+                  <span className="max-w-xs font-medium">
                     2 Thomas Igberaese Close Idi Saba Ebhoiyi Uromi Edo State, Nigeria
                   </span>
                 </motion.div>
@@ -205,17 +218,17 @@ const Footer: React.FC = () => {
 
             {/* Social Links */}
             <motion.div
-              className="text-center space-y-6"
+              className="text-center space-y-4 sm:space-y-6"
               variants={itemVariants}
             >
               <motion.h3
-                className="text-2xl font-bold text-white"
+                className="text-lg sm:text-xl md:text-2xl font-black text-white"
                 whileHover={{ scale: 1.05 }}
               >
                 Connect With Us
               </motion.h3>
 
-              <div className="flex justify-center space-x-6">
+              <div className="flex justify-center space-x-4 sm:space-x-6">
                 {[
                   { icon: FaFacebookF, href: "#", color: "hover:text-blue-400" },
                   { icon: FaTwitter, href: "#", color: "hover:text-cyan-400" },
@@ -246,8 +259,8 @@ const Footer: React.FC = () => {
                     whileTap={{ scale: 0.9 }}
                   >
                     <Link href={social.href} passHref>
-                      <div className={`w-12 h-12 glassmorphic rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${social.color} hover:shadow-lg hover:shadow-blue-500/25`}>
-                        <social.icon size={20} />
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 glassmorphic rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${social.color} hover:shadow-lg hover:shadow-blue-500/25`}>
+                        <social.icon size={16} className="sm:w-5 sm:h-5" />
                       </div>
                     </Link>
                   </motion.div>
@@ -255,10 +268,10 @@ const Footer: React.FC = () => {
               </div>
 
               <motion.div
-                className="glassmorphic-ocean p-4 rounded-2xl"
+                className="glassmorphic-ocean p-3 sm:p-4 rounded-2xl"
                 whileHover={{ scale: 1.02 }}
               >
-                <p className="text-sm text-blue-200">
+                <p className="text-xs sm:text-sm text-blue-200 font-medium">
                   Follow us for the latest energy industry updates and company news.
                 </p>
               </motion.div>
@@ -267,13 +280,13 @@ const Footer: React.FC = () => {
 
           {/* Copyright */}
           <motion.div
-            className="text-center mt-12 pt-8 border-t border-white/20"
+            className="text-center mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/20"
             variants={itemVariants}
           >
-            <p className="text-blue-300">
+            <p className="text-blue-300 text-sm sm:text-base font-medium">
               &copy; {new Date().getFullYear()} Yonan Technologies. All rights reserved.
             </p>
-            <p className="text-sm text-blue-400 mt-2">
+            <p className="text-xs sm:text-sm text-blue-400 mt-1 sm:mt-2 font-medium">
               Delivering Excellence in Energy Solutions
             </p>
           </motion.div>

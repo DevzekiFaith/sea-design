@@ -107,6 +107,13 @@ export default function Contact() {
                 </div>
               </div>
               <div className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-6 flex items-center">
+                <FaEnvelope className="mr-2" />
+                <strong>Info Email:</strong>{" "}
+                <div className="underline hover:text-gray-300 cursor-pointer">
+                  info@lucktangngltd.com
+                </div>
+              </div>
+              <div className="mb-2 text-white transform transition-transform duration-500 hover:translate-x-6 flex items-center">
                 <FaWhatsapp className="mr-2" />
                 <strong>Whatsapp 24/7:</strong> +2347063506072
               </div>

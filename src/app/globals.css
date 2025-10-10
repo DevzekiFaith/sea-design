@@ -440,6 +440,10 @@ h1, h2, h3, h4, h5, h6 {
   animation: fadeInRight 0.8s ease-out;
 }
 
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .card {
