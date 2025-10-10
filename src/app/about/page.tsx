@@ -38,7 +38,7 @@ class ErrorBoundary extends React.Component<
               </svg>
             </div>
             <h2 className="text-xl font-bold text-gray-900 mb-2">Something went wrong</h2>
-            <p className="text-gray-600 mb-4">We're sorry, but there was an error loading the about page.</p>
+            <p className="text-gray-600 mb-4">We are sorry, but there was an error loading the about page.</p>
             <button 
               onClick={() => window.location.reload()}
               className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
