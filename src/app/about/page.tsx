@@ -1,82 +1,266 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, ErrorInfo, ReactNode } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+
+// Error Boundary Component
+interface ErrorBoundaryState {
+  hasError: boolean;
+  error?: Error;
+}
+
+class ErrorBoundary extends React.Component<
+  { children: ReactNode },
+  ErrorBoundaryState
+> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error('About page error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen bg-white flex items-center justify-center p-4">
+          <div className="text-center max-w-md">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-bold text-gray-900 mb-2">Something went wrong</h2>
+            <p className="text-gray-600 mb-4">We're sorry, but there was an error loading the about page.</p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Reload Page
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
 
 const Header = dynamic(() => import("@/component/Header/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer/Footer"), { ssr: false });
 const Team = dynamic(() => import("@/component/Team/Team"), { ssr: false });
 
+// Loading Spinner Component
+const LoadingSpinner: React.FC<{ progress: number }> = ({ progress }) => (
+  <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div className="flex flex-col items-center space-y-6">
+      {/* Spinning Logo/Icon */}
+      <div className="relative">
+        <div className="w-20 h-20 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+            <span className="text-white font-bold text-lg">L</span>
+          </div>
+        </div>
+      </div>
+      
+      {/* Loading Text */}
+      <div className="text-center">
+        <h3 className="text-2xl font-black text-gray-900 mb-2">Loading About Page</h3>
+        <p className="text-gray-600 font-medium">Please wait while we load our story...</p>
+        <p className="text-sm text-blue-600 font-semibold mt-2">{progress}% Complete</p>
+      </div>
+      
+      {/* Progress Bar */}
+      <div className="w-80 h-3 bg-gray-200 rounded-full overflow-hidden shadow-inner">
+        <div 
+          className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-500 ease-out"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
+      
+      {/* Loading Dots */}
+      <div className="flex space-x-2">
+        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
+        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+      </div>
+    </div>
+  </div>
+);
+
 const AboutPage: React.FC = () => {
-  // Scroll functions
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+
+  useEffect(() => {
+    // Preload critical images
+    const imageUrls = [
+      "/images/s5.jpg",
+      "/images/se4.jpg",
+      "/images/ceo3.jpg",
+      "/images/coo1.jpg",
+      "/images/md1.jpg",
+      "/images/t2.jpg"
+    ];
+
+    let loadedImages = 0;
+    const totalImages = imageUrls.length;
+    let isMounted = true;
+
+    const preloadImages = () => {
+      imageUrls.forEach((url) => {
+        const img = new window.Image();
+        img.onload = () => {
+          if (!isMounted) return;
+          loadedImages++;
+          const progress = Math.round((loadedImages / totalImages) * 100);
+          setLoadingProgress(progress);
+          
+          if (loadedImages === totalImages) {
+            // All images loaded, wait a bit more for smooth transition
+            setTimeout(() => {
+              if (isMounted) {
+                setIsLoading(false);
+              }
+            }, 500);
+          }
+        };
+        img.onerror = () => {
+          if (!isMounted) return;
+          loadedImages++;
+          const progress = Math.round((loadedImages / totalImages) * 100);
+          setLoadingProgress(progress);
+          
+          if (loadedImages === totalImages) {
+            setTimeout(() => {
+              if (isMounted) {
+                setIsLoading(false);
+              }
+            }, 500);
+          }
+        };
+        img.src = url;
       });
+    };
+
+    // Start preloading after a short delay
+    const timer = setTimeout(preloadImages, 300);
+    
+    // Fallback timer in case images don't load
+    const fallbackTimer = setTimeout(() => {
+      if (isMounted) {
+        setIsLoading(false);
+      }
+    }, 3000);
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timer);
+      clearTimeout(fallbackTimer);
+    };
+  }, []);
+  // Scroll functions with error handling
+  const scrollToSection = React.useCallback((sectionId: string) => {
+    try {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } catch (error) {
+      console.warn('Scroll to section failed:', error);
     }
-  };
+  }, []);
 
-  const scrollUp = () => {
-    window.scrollTo({ 
-      top: 0, 
-      behavior: 'smooth' 
-    });
-  };
-
-  const scrollDown = () => {
-    const missionSection = document.getElementById('mission-section');
-    if (missionSection) {
-      missionSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    } else {
-      // Fallback: scroll down by viewport height
-      window.scrollBy({ 
-        top: window.innerHeight, 
+  const scrollUp = React.useCallback(() => {
+    try {
+      window.scrollTo({ 
+        top: 0, 
         behavior: 'smooth' 
       });
+    } catch (error) {
+      console.warn('Scroll up failed:', error);
     }
-  };
+  }, []);
+
+  const scrollDown = React.useCallback(() => {
+    try {
+      const missionSection = document.getElementById('mission-section');
+      if (missionSection) {
+        missionSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      } else {
+        // Fallback: scroll down by viewport height
+        window.scrollBy({ 
+          top: window.innerHeight, 
+          behavior: 'smooth' 
+        });
+      }
+    } catch (error) {
+      console.warn('Scroll down failed:', error);
+    }
+  }, []);
+
+  // Show loading spinner while loading
+  if (isLoading) {
+    return <LoadingSpinner progress={loadingProgress} />;
+  }
+
   return (
-    <div className="bg-white min-h-screen">
-      <Header />
+    <ErrorBoundary>
+      <div className="bg-white min-h-screen">
+        <Header />
 
       {/* Hero Section - Mobile Responsive */}
       <div className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[85vh] w-full mt-16 sm:mt-20 overflow-hidden">
         <Image
           src="/images/s5.jpg"
-          alt="About Lucktang - Industrial Energy Solutions"
+          alt="About Lucktang - Industrial Energy Solutions showing modern energy infrastructure and facilities"
           fill
           style={{ objectFit: "cover" }}
           className="z-0 transform transition-transform duration-1000 hover:scale-105"
+          priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-gray-200/30 via-gray-300/20 to-gray-400/30 backdrop-blur-sm"></div>
         
         {/* Enhanced Scroll Indicators - Hidden on mobile */}
         <div className="hidden md:flex absolute right-4 lg:right-8 top-1/2 transform -translate-y-1/2 z-10 flex-col space-y-4">
-          <div 
+          <button 
             onClick={scrollUp}
-            className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-white/40 hover:scale-110 transition-all duration-300 group"
+            className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-white/40 hover:scale-110 transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-white/50"
             title="Scroll to top"
+            aria-label="Scroll to top of page"
+            type="button"
           >
-            <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white group-hover:text-blue-200 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white group-hover:text-blue-200 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
             </svg>
-          </div>
-          <div 
+          </button>
+          <button 
             onClick={scrollDown}
-            className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-white/40 hover:scale-110 transition-all duration-300 group"
+            className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-white/40 hover:scale-110 transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-white/50"
             title="Scroll down"
+            aria-label="Scroll down to mission section"
+            type="button"
           >
-            <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white group-hover:text-blue-200 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white group-hover:text-blue-200 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
-          </div>
+          </button>
         </div>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 sm:p-6 md:p-8">
@@ -106,15 +290,17 @@ const AboutPage: React.FC = () => {
             <div className="relative">
               {/* Scroll Indicator - Hidden on mobile */}
               <div className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 -mr-4">
-                <div 
+                <button 
                   onClick={() => scrollToSection('values-section')}
-                  className="w-8 h-8 rounded-full bg-blue-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-opacity-30 transition-all duration-300"
+                  className="w-8 h-8 rounded-full bg-blue-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-opacity-30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                   title="Go to Values section"
+                  aria-label="Go to Values section"
+                  type="button"
                 >
-                  <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </div>
+                </button>
               </div>
               
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 text-gray-900 text-center">
@@ -125,10 +311,11 @@ const AboutPage: React.FC = () => {
                   <div className="relative h-64 sm:h-72 md:h-80 w-full transform transition-transform duration-500 hover:scale-105">
                     <Image
                       src="/images/se4.jpg"
-                      alt="About Lucktang"
+                      alt="Lucktang energy infrastructure and industrial facilities showcasing our mission"
                       fill
                       style={{ objectFit: "cover" }}
                       className="rounded-xl shadow-lg"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
                 </div>
@@ -167,15 +354,17 @@ const AboutPage: React.FC = () => {
           <div className="relative">
             {/* Scroll Indicator - Hidden on mobile */}
             <div className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 -mr-4">
-              <div 
+              <button 
                 onClick={() => scrollToSection('team-section')}
-                className="w-8 h-8 rounded-full bg-blue-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-opacity-30 transition-all duration-300"
+                className="w-8 h-8 rounded-full bg-blue-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-opacity-30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                 title="Go to Team section"
+                aria-label="Go to Team section"
+                type="button"
               >
-                <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </div>
+              </button>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
@@ -230,15 +419,17 @@ const AboutPage: React.FC = () => {
             <div className="relative">
               {/* Scroll Indicator - Hidden on mobile */}
               <div className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 -mr-4">
-                <div 
+                <button 
                   onClick={() => scrollToSection('contact-section')}
-                  className="w-8 h-8 rounded-full bg-blue-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-opacity-30 transition-all duration-300"
+                  className="w-8 h-8 rounded-full bg-blue-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-opacity-30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                   title="Go to Contact section"
+                  aria-label="Go to Contact section"
+                  type="button"
                 >
-                  <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </div>
+                </button>
               </div>
               
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 text-gray-900 text-center">
@@ -253,7 +444,7 @@ const AboutPage: React.FC = () => {
                     <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-xl">
                       <Image
                         src="/images/t2.jpg"
-                        alt="Our Professional Team"
+                        alt="Professional team members working together at Lucktang energy company"
                         fill
                         style={{ objectFit: "cover" }}
                         className="rounded-xl shadow-lg transform transition-all duration-700 group-hover:scale-110"
@@ -354,7 +545,8 @@ const AboutPage: React.FC = () => {
         </div>
       </div>
       <Footer />
-    </div>
+      </div>
+    </ErrorBoundary>
   );
 };
 
